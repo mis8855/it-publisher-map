@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>출판사별 SNS 홍보 전략 보고서 2026</title>
+<link rel="stylesheet" href="app.css">
+<style>
+.toc{top:20px}
+.rbody h2,.rbody h3{scroll-margin-top:16px}
+.rpick{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink2)}
+.rpick select{font:inherit;padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<section class="app-sec"><div class="rep"><nav class="toc" id="r-toc" aria-label="보고서 목차"></nav><article class="rbody" id="r-body"></article></div></section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.js"></script>
+<script src="app.js"></script>
+<script>
+APPX.start('report', function () {
+  const esc = APPX.esc, toc = document.getElementById('r-toc'), body = document.getElementById('r-body');
+  const jump = id => { const t = document.getElementById(id); if (t) t.scrollIntoView({ block: 'start' }); };
+  const draw = () => {
+    const RP = window.REPORT, L = window.REPORTS || [];
+    toc.innerHTML = '<b>목차</b>' + RP.toc.map(([id, t]) => '<a href="#' + encodeURIComponent(id) + '" data-to="' + esc(id) + '">' + esc(t) + '</a>').join('');
+    const pick = '<label class="rpick">작성일 <select id="r-date">' + L.map((r, i) => '<option value="' + esc(r.report_date) + '"' + (r.report_date === RP.asof ? ' selected' : '') + '>' + esc(r.report_date) + (i === 0 ? ' (최신)' : '') + '</option>').join('') + '</select></label>';
+    body.innerHTML = '<h1 class="rh1">' + esc(RP.title) + '</h1><div class="rmeta">' + pick + '<span>보관 중인 보고서 ' + L.length + '건</span>' + (RP.doc_url ? '<a href="' + esc(RP.doc_url) + '" target="_blank" rel="noopener">원본 문서에서 편집·댓글 달기</a>' : '') + '</div><p class="rlead">' + RP.lead + '</p>' + RP.body;
+  };
+  draw();
+  body.addEventListener('change', e => {
+    if (e.target.id !== 'r-date') return;
+    const sel = e.target; sel.disabled = true;
+    window.loadReport(sel.value).then(() => { draw(); scrollTo(0, 0); }).catch(() => { sel.disabled = false; });
+  });
+  toc.addEventListener('click', e => { const a = e.target.closest('[data-to]'); if (!a) return; e.preventDefault(); jump(a.dataset.to); });
+  if (location.hash.length > 1) setTimeout(() => jump(decodeURIComponent(location.hash.slice(1))), 50);
+});
+</script>
+</body>
+</html>
