@@ -718,6 +718,7 @@ body.locked .appbar,body.locked .app-sec{display:none!important}
 const SB_URL='https://uerntgyxjeerbdetomlk.supabase.co';
 const SB_KEY='sb_publishable_8EjqrDRU-NTU3cHGyGln9w_NOLtzmTp';   // 공개해도 되는 열쇠. 읽기는 로그인과 허용 목록이 막는다
 const sb=supabase.createClient(SB_URL,SB_KEY);
+const GRP='it';   // 이 화면이 보여 주는 출판사 묶음
 const MEDIA=p=>(window.__media&&window.__media[p])||p;
 const DB={};
 
@@ -725,7 +726,7 @@ const DB={};
 DB.all=async(table,cols,orders)=>{
   let out=[];
   for(let off=0;;off+=1000){
-    let q=sb.from(table).select(cols);
+    let q=sb.from(table).select(cols).eq('grp',GRP);
     orders.forEach(([c,asc])=>{q=q.order(c,{ascending:asc!==false})});
     const {data,error}=await q.range(off,off+999);
     if(error)throw error;
@@ -755,9 +756,9 @@ DB.boot=async uid=>{
   const [books,imgs,meta,sum,reps]=await Promise.all([
     DB.all('books','id,sprite,data',[['pub_date',false],['id']]),
     DB.all('promo_images','data',[['thumb_index'],['file']]),
-    sb.from('app_meta').select('key,value'),
-    sb.rpc('sns_summary'),
-    sb.from('reports').select('report_date,title,findings,profiles,doc_url').order('report_date',{ascending:false}),
+    sb.from('app_meta').select('key,value').eq('grp',GRP),
+    sb.rpc('sns_summary',{g:GRP}),
+    sb.from('reports').select('report_date,title,findings,profiles,doc_url').eq('grp',GRP).order('report_date',{ascending:false}),
   ]);
   for(const r of [meta,sum,reps])if(r.error)throw r.error;
   if(!books.length)return false;                    // 허용 목록에 없으면 아무것도 보이지 않는다
@@ -790,8 +791,8 @@ DB.boot=async uid=>{
 // SNS 게시물은 SNS 화면을 처음 열 때 읽는다
 DB.loadSns=async()=>{
   const n=Math.max(1,Math.ceil(window.XREF.posts/1000));
-  const page=i=>sb.from('sns_posts').select('data,full_text').order('seq').order('url').range(i*1000,i*1000+999);
-  const [acc,...pages]=await Promise.all([sb.from('sns_accounts').select('data'),...Array.from({length:n},(_,i)=>page(i))]);
+  const page=i=>sb.from('sns_posts').select('data,full_text').eq('grp',GRP).order('seq').order('url').range(i*1000,i*1000+999);
+  const [acc,...pages]=await Promise.all([sb.from('sns_accounts').select('data').eq('grp',GRP),...Array.from({length:n},(_,i)=>page(i))]);
   for(const r of [acc,...pages])if(r.error)throw r.error;
   const rows=pages.flatMap(r=>r.data);
   const PUBS=['한빛미디어','이지스퍼블리싱','길벗','제이펍','골든래빗','위키북스'], PL=['ig','x','th'];
@@ -809,7 +810,7 @@ DB.loadSns=async()=>{
 // 보고서는 작성일마다 한 건씩 보관한다. 날짜를 주지 않으면 가장 최근 것을 읽는다
 DB.loadReport=async d=>{
   d=d||(window.REPORTS[0]||{}).report_date;
-  const {data,error}=await sb.from('reports').select('report_date,title,lead,body,toc,doc_url').eq('report_date',d).single();
+  const {data,error}=await sb.from('reports').select('report_date,title,lead,body,toc,doc_url').eq('grp',GRP).eq('report_date',d).single();
   if(error)throw error;
   window.REPORT={title:data.title,asof:data.report_date,lead:data.lead||'',body:data.body,toc:data.toc||[],doc_url:data.doc_url};
 };
