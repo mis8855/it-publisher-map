@@ -1657,7 +1657,7 @@ APP.toReport=id=>APP.nav('report',null,true).then(()=>{const t=document.getEleme
   h+='<h2>원본 대시보드</h2><p class="lede">이 앱은 아래 네 링크를 합친 것입니다. 원본 링크는 그대로 남아 있습니다.</p><div class="orig">'+
     [['https://claude.ai/artifact/6RXtAAUpd2tTBkM1mAW427','표지 지도 2026 (IT 출판사)','표지 372종'],['https://claude.ai/artifact/WbEMkF9RjFzPTWmwKzCtfH','상세페이지 지도 2026 (IT 출판사)','상세페이지 364장'],['https://claude.ai/artifact/9ELAo7jPzkoFigXP8WGHxE','SNS 홍보 지도 2026 (IT 출판사)','게시물 3,512건'],[DOC_URL,'출판사별 SNS 홍보 전략 보고서 2026','편집할 수 있는 문서']].map(([u,t,s])=>'<a href="'+u+'" target="_blank" rel="noopener">'+esc(t)+'<small>'+esc(s)+'</small></a>').join('')+'</div>';
   h+='<p class="homefoot">'+esc(C.meta.source)+'</p>';
-  h+='<p class="homefoot"><a href="general/" style="color:var(--accent)">일반 출판사 시장 지도 열기</a> · <span id="h-who"></span> <button type="button" class="linkbtn" id="h-out">로그아웃</button></p>';
+  h+='<p class="homefoot"><a href="../general-publisher-map/" style="color:var(--accent)">일반 출판사 시장 지도 열기</a> · <span id="h-who"></span> <button type="button" class="linkbtn" id="h-out">로그아웃</button></p>';
   const root=document.getElementById('home'); root.innerHTML=h;
   root.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{const k=b.dataset.f,p=b.dataset.p;APP.filter(k,k==='cover'?(b.dataset.s?{pub:p,style:b.dataset.s}:{pub:p}):{pub:p})});
   root.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>APP.toReport(b.dataset.r));
