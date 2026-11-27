@@ -1,0 +1,1680 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>IT 출판사 시장 지도 2026</title>
+<style>:root{color-scheme:light;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* 배치 개념: 네 지도가 쓰던 차가운 무채색과 청록 강조색을 그대로 잇는다. 위쪽 고정 막대에 단계 순서(표지→상세페이지→SNS→보고서)를 두고, 그 아래에 고른 지도 하나를 연다 */
+:root{
+  --bg:#eceef0; --surface:#f8f9fa; --line:#d5d9dd; --ink:#15191e; --ink2:#4d555e; --ink3:#69727c;
+  --accent:#0b5c6b; --accent-soft:#d6e7ea; --on-accent:#ffffff; --new:#8a4b00; --new-soft:#f6e6cd;
+  --heat0:#edf3f4; --heat1:#c2dbdf; --heat2:#8abcc4; --heat3:#4e98a5; --heat4:#1f7384; --heat5:#0b5163;
+  --ig:#b23a6a; --x:#2f3640; --th:#6b55b0; --ig-soft:#f3dde6; --x-soft:#dfe2e6; --th-soft:#e6e0f3;
+  --f-one:#9cc3cb; --f-many:#1f7384; --f-photo:#4e98a5; --f-reel:#c0703a; --f-video:#dba06f; --f-link:#8a78c8; --f-text:#9aa3ad; --f-na:#cfd4d9;
+  --serif:"Noto Serif KR","AppleMyungjo","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --gl:max(20px,env(safe-area-inset-left,0px)); --gr:max(20px,env(safe-area-inset-right,0px));
+  --bar:52px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14171a; --surface:#1c2024; --line:#30363c; --ink:#eef0f2; --ink2:#b3bac2; --ink3:#8f97a0;
+  --accent:#6cc4d3; --accent-soft:#17383f; --on-accent:#08242a; --new:#f0bd72; --new-soft:#3a2c14;
+  --heat0:#1c2529; --heat1:#1d3a42; --heat2:#1f5664; --heat3:#2c7b8c; --heat4:#52a5b5; --heat5:#90d0db;
+  --ig:#ec7aa6; --x:#c9d0d8; --th:#a995e6; --ig-soft:#3d2230; --x-soft:#2a3038; --th-soft:#2d2640;
+  --f-one:#2f6672; --f-many:#6cc4d3; --f-photo:#4aa3b3; --f-reel:#e39a62; --f-video:#a8683a; --f-link:#a995e6; --f-text:#6c7580; --f-na:#3a4149; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171a; --surface:#1c2024; --line:#30363c; --ink:#eef0f2; --ink2:#b3bac2; --ink3:#8f97a0;
+  --accent:#6cc4d3; --accent-soft:#17383f; --on-accent:#08242a; --new:#f0bd72; --new-soft:#3a2c14;
+  --heat0:#1c2529; --heat1:#1d3a42; --heat2:#1f5664; --heat3:#2c7b8c; --heat4:#52a5b5; --heat5:#90d0db;
+  --ig:#ec7aa6; --x:#c9d0d8; --th:#a995e6; --ig-soft:#3d2230; --x-soft:#2a3038; --th-soft:#2d2640;
+  --f-one:#2f6672; --f-many:#6cc4d3; --f-photo:#4aa3b3; --f-reel:#e39a62; --f-video:#a8683a; --f-link:#a995e6; --f-text:#6c7580; --f-na:#3a4149; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* 앱 막대 */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--surface)}
+.appbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;height:var(--bar);display:flex;align-items:center;gap:16px;padding-left:var(--gl);padding-right:var(--gr);background:var(--surface);border-bottom:1px solid var(--line)}
+.logo{border:0;background:none;padding:0;font:700 16px/1.2 var(--serif);color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
+.logo span{font:500 12px/1 var(--sans);color:var(--ink3);margin-left:6px;letter-spacing:.02em}
+.appnav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.appnav::-webkit-scrollbar{display:none}
+.appnav button{border:0;background:none;padding:6px 12px 6px 8px;border-radius:999px;color:var(--ink2);font-weight:500;font-size:13.5px;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.appnav button:hover{color:var(--ink);background:var(--bg)}
+.appnav i{font-style:normal;font-size:11px;font-weight:700;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--ink3);font-variant-numeric:tabular-nums}
+.appnav button.home{padding-left:12px}
+.appnav button[aria-current="page"]{background:var(--accent);color:var(--on-accent)}
+.appnav button[aria-current="page"] i{border-color:currentColor;color:inherit}
+.loading{padding:60px var(--gr) 60px var(--gl);color:var(--ink2)}
+
+/* 표지 묶음 그림 한 칸 */
+.cvr{display:block;width:100%;background-repeat:no-repeat;background-color:var(--line)}
+.cvr.w84{width:84px}.cvr.w58{width:58px}.cvr.w44{width:44px;flex:none}.cvr.h54{height:54px;width:auto}
+
+/* 다른 지도로 건너가기 */
+.xl{margin:14px 0 4px;padding-top:12px;border-top:1px solid var(--line)}
+.xlh{display:block;font-size:12px;color:var(--ink3);font-weight:700;letter-spacing:.03em;margin-bottom:6px}
+.xlb{display:flex;flex-wrap:wrap;gap:6px}
+.xlbtn{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:5px 11px;text-align:left;display:flex;flex-direction:column;line-height:1.3;min-width:0}
+.xlbtn b{font-size:12.5px;font-weight:600;color:var(--accent)}
+.xlbtn small{font-size:11.5px;color:var(--ink2)}
+.xlbtn:hover:not([disabled]){border-color:var(--accent)}
+.xlbtn[disabled]{opacity:.5;cursor:default}
+.xlbtn[disabled] b{color:var(--ink2)}
+
+/* 개요 */
+.home{padding-block:30px 64px;padding-left:var(--gl);padding-right:var(--gr);max-width:1320px}
+.hero h1{font:700 30px/1.25 var(--serif);margin:0;letter-spacing:-.015em;text-wrap:balance}
+.hero p{margin:8px 0 0;color:var(--ink2);max-width:72ch;font-size:14.5px}
+.hero .meta{font-size:12.5px;color:var(--ink3);margin-top:6px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:26px 0 8px;counter-reset:st}
+.stage{position:relative;display:flex;flex-direction:column;gap:10px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 14px 16px;min-width:0;color:var(--ink)}
+.stage:hover{border-color:var(--accent)}
+.stage:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;width:10px;height:10px;border-top:2px solid var(--line);border-right:2px solid var(--line);transform:translateY(-50%) rotate(45deg);z-index:1}
+.stage .eb{font-size:11.5px;letter-spacing:.05em;color:var(--ink3);font-weight:700}
+.stage h3{font:700 18px/1.3 var(--serif);margin:0}
+.stage .nums{display:flex;gap:18px;flex-wrap:wrap}
+.stage .nums b{display:block;font-size:22px;line-height:1.15;font-variant-numeric:tabular-nums;font-weight:700}
+.stage .nums span{font-size:12px;color:var(--ink2)}
+.stage p{margin:0;font-size:12.5px;color:var(--ink2)}
+.stage .go{margin-top:auto;font-size:12.5px;font-weight:600;color:var(--accent)}
+.vis{height:96px;display:flex;align-items:flex-end;gap:5px;overflow:hidden}
+.vis .cvr{width:calc((100% - 15px)/4);flex:none;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.vis .hth{flex:1 1 0;aspect-ratio:3/4;height:96px;background-size:400% 400%;background-repeat:no-repeat;background-color:var(--line);border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.vis.plat{flex-direction:column;align-items:stretch;justify-content:flex-end;gap:6px}
+.pbar{display:flex;height:16px;border-radius:4px;overflow:hidden}
+.pbar i{display:block;height:100%}
+.plg{display:flex;gap:10px;flex-wrap:wrap;font-size:11.5px;color:var(--ink2)}
+.plg span{display:inline-flex;gap:4px;align-items:center}.plg i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.vis.quote{align-items:stretch}
+.vis.quote q{display:block;font:600 13.5px/1.5 var(--serif);border-left:3px solid var(--accent);padding-left:10px;quotes:none;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}
+.home h2{font:700 20px/1.3 var(--serif);margin:40px 0 4px;text-wrap:balance}
+.home .lede{margin:0 0 14px;color:var(--ink2);font-size:13.5px;max-width:80ch}
+.tblx{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table.pt{border-collapse:collapse;width:100%;font-size:13px;min-width:820px}
+table.pt th,table.pt td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+table.pt thead th{font-size:12px;color:var(--ink3);font-weight:700;white-space:nowrap}
+table.pt tbody tr:last-child td,table.pt tbody tr:last-child th{border-bottom:0}
+table.pt tbody th{font-weight:700;white-space:nowrap}
+.cellbtn{border:0;background:none;padding:0;text-align:left;color:inherit;display:flex;flex-direction:column;gap:3px;width:100%}
+.cellbtn:hover .lbl{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.cellbtn small{color:var(--ink3);font-size:11.5px}
+.mbar{display:flex;align-items:center;gap:8px}
+.mbar .tr{flex:1;height:7px;background:var(--heat0);border-radius:4px;overflow:hidden;min-width:60px}
+.mbar .tr i{display:block;height:100%;background:var(--accent)}
+.mbar .v{font-variant-numeric:tabular-nums;font-size:12.5px;white-space:nowrap}
+.tag{display:inline-block;background:var(--accent-soft);color:var(--ink);border-radius:4px;padding:1px 8px;font-size:12.5px;font-weight:600}
+.find{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.find input{flex:1 1 300px;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.find span{font-size:12.5px;color:var(--ink3)}
+.blist{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.blist li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+.blist li:last-child{border-bottom:0}
+.blist .t{font-weight:600;line-height:1.35;overflow-wrap:anywhere}
+.blist .m{font-size:12px;color:var(--ink3)}
+.blist .xlb{justify-content:flex-end}
+.orig{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:8px;margin-top:8px}
+.orig a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--ink);text-decoration:none;font-size:13px}
+.orig a:hover{border-color:var(--accent)}
+.orig a small{display:block;color:var(--ink3);font-size:11.5px}
+.homefoot{margin-top:36px;color:var(--ink3);font-size:12px;max-width:100ch}
+
+/* 보고서 */
+.rep{display:grid;grid-template-columns:230px minmax(0,1fr);gap:44px;padding-block:28px 72px;padding-left:var(--gl);padding-right:var(--gr);max-width:1240px}
+.toc{position:sticky;top:calc(var(--bar) + 20px);align-self:start;max-height:calc(100vh - var(--bar) - 40px);overflow:auto;font-size:13px}
+.toc b{display:block;font-size:12px;color:var(--ink3);letter-spacing:.04em;margin-bottom:8px}
+.toc a{display:block;color:var(--ink2);text-decoration:none;padding:4px 0 4px 10px;border-left:2px solid var(--line);line-height:1.4}
+.toc a:hover{color:var(--accent);border-left-color:var(--accent)}
+.rbody{min-width:0;max-width:780px}
+.rbody .rh1{font:700 27px/1.3 var(--serif);margin:0;text-wrap:balance;letter-spacing:-.01em}
+.rmeta{display:flex;gap:10px 16px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--ink3);margin:8px 0 18px}
+.rmeta a{color:var(--accent)}
+.rlead{font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 6px}
+.rbody h2{font:700 21px/1.35 var(--serif);margin:46px 0 10px;padding-top:14px;border-top:1px solid var(--line);scroll-margin-top:calc(var(--bar) + 16px);text-wrap:balance}
+.rbody h3{font-size:15.5px;margin:26px 0 8px;scroll-margin-top:calc(var(--bar) + 16px)}
+.rbody p,.rbody li{font-size:14.5px;line-height:1.75}
+.rbody p{margin:0 0 10px}
+.rbody ul,.rbody ol{padding-left:22px;margin:0 0 12px}
+.rbody li p{margin:0 0 4px}
+.rbody a{color:var(--accent)}
+.rbody .tblwrap{overflow-x:auto;margin:6px 0 14px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.rbody table{border-collapse:collapse;width:100%;font-size:13px}
+.rbody th,.rbody td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.rbody th{font-size:12px;color:var(--ink3);font-weight:700;white-space:nowrap;background:var(--bg)}
+.rbody tr:last-child td{border-bottom:0}
+.rbody td{font-variant-numeric:tabular-nums}
+.rfig{margin:10px 0 18px}
+.rfig .tblwrap{padding:6px 4px}
+.rfig figcaption{font-size:12px;color:var(--ink3);margin-top:6px}
+.rchart{display:block;width:100%;min-width:560px;height:auto;font-family:var(--sans)}
+.rchart .t1{fill:var(--ink);font-size:16px;font-weight:600}
+.rchart .t2{fill:var(--ink2);font-size:12px}
+.rchart .t3{fill:var(--ink);font-size:12px;font-weight:600}
+.rchart .t4{fill:var(--ink);font-size:11px}
+.rchart .t4a{fill:var(--on-accent);font-size:11px;font-weight:600}
+.rchart .t4b{fill:var(--bg);font-size:11px;font-weight:600}
+.rchart rect.pre{fill:var(--accent)}
+.rchart rect.post{fill:var(--ink3)}
+
+@media (max-width:980px){
+  .flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stage:nth-child(2)::after{display:none}
+  .rep{grid-template-columns:minmax(0,1fr);gap:16px}
+  .toc{position:static;max-height:none;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+  .toc b{width:100%;margin:0}
+  .toc a{border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--surface)}
+}
+@media (max-width:820px){
+  :root{--gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px))}
+  .logo span{display:none}
+  .appnav button{padding:6px 9px 6px 6px}
+  .appnav button.home{padding-left:9px}
+  .hero h1{font-size:24px}
+  .blist li{grid-template-columns:44px minmax(0,1fr)}
+  .blist .xlb{grid-column:1/-1;justify-content:flex-start}
+}
+@media (max-width:560px){
+  .flow{grid-template-columns:minmax(0,1fr)}
+  .stage::after{display:none}
+  .appbar{gap:6px}
+  .logo{display:none}
+  .appnav{margin-left:0}
+  .appnav button .lb2{display:none}
+}
+
+#sec-cover header.top{display:flex;gap:12px 28px;align-items:flex-end;flex-wrap:wrap;padding-block:20px 0;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--line)}
+#sec-cover .brand{min-width:0}
+#sec-cover .brand .h1{font:700 26px/1.2 var(--serif);margin:0;letter-spacing:-.01em}
+#sec-cover .brand .h1 small{font:500 15px/1 var(--sans);color:var(--ink2);margin-left:6px;letter-spacing:0}
+#sec-cover .brand p{margin:3px 0 10px;color:var(--ink2);font-size:13px}
+#sec-cover .dl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+#sec-cover .dl button{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:6px 12px;font-size:12.5px}
+#sec-cover .dl button:hover{border-color:var(--accent);color:var(--accent)}
+#sec-cover .dl button[disabled]{opacity:.5;cursor:default}
+#sec-cover .dlmsg{font-size:12px;color:var(--ink2)}
+#sec-cover nav.tabs{display:flex;gap:2px;margin-left:auto}
+#sec-cover nav.tabs button{border:0;background:none;padding:9px 16px;border-bottom:3px solid transparent;color:var(--ink2);font-weight:500;white-space:nowrap}
+#sec-cover nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+#sec-cover .browse{display:grid;grid-template-columns:272px minmax(0,1fr);min-height:calc(100vh - 92px)}
+#sec-cover aside.filters{border-right:1px solid var(--line);padding:16px 14px 40px var(--gl);overflow:auto;position:sticky;top:var(--bar);max-height:calc(100vh - var(--bar))}
+#sec-cover aside.filters summary{display:none}
+#sec-cover .fgroup{margin-bottom:18px}
+#sec-cover .fgroup h3{font-size:12px;letter-spacing:.04em;color:var(--ink3);margin:0 0 6px;font-weight:700}
+#sec-cover .opt{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;padding:4px 7px;border-radius:5px;text-align:left;color:var(--ink)}
+#sec-cover .opt:hover{background:var(--line)}
+#sec-cover .opt[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+#sec-cover .opt .c{margin-left:auto;font-variant-numeric:tabular-nums;font-size:12px;opacity:.7}
+#sec-cover .opt[disabled]{opacity:.35;cursor:default}
+#sec-cover .opt .nw{font-size:10.5px;border:1px solid currentColor;border-radius:3px;padding:0 4px;line-height:1.5;opacity:.8;flex:none}
+#sec-cover .colorrow{display:flex;flex-wrap:wrap;gap:6px}
+#sec-cover .colorbtn{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);padding:0}
+#sec-cover .colorbtn[aria-pressed="true"]{outline:3px solid var(--accent);outline-offset:1px}
+#sec-cover .shelf{padding:16px var(--gr) 60px 20px;min-width:0}
+#sec-cover .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+#sec-cover .bar input[type=search]{flex:1 1 260px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+#sec-cover .bar select{padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+#sec-cover .count{font-variant-numeric:tabular-nums;color:var(--ink2);font-size:13px}
+#sec-cover .hint{margin:-4px 0 10px;color:var(--ink3);font-size:12px}
+#sec-cover .card small.why{color:var(--accent);font-size:11.5px;line-height:1.35}
+#sec-cover .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;min-height:0}
+#sec-cover .chip{border:1px solid var(--accent);color:var(--accent);background:none;border-radius:999px;padding:2px 10px;font-size:12.5px}
+#sec-cover .chip.clear{border-color:var(--line);color:var(--ink2)}
+#sec-cover .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:22px 16px}
+#sec-cover .card{border:0;background:none;padding:0;text-align:left;display:flex;flex-direction:column;gap:6px;min-width:0}
+#sec-cover .card .ph{aspect-ratio:2/3;display:flex;align-items:flex-end;justify-content:center;max-width:100%}
+#sec-cover .card .cvr{max-width:100%;max-height:100%;display:block;box-shadow:0 1px 2px rgba(0,0,0,.22),0 6px 14px rgba(0,0,0,.14);transition:transform .15s}
+#sec-cover .card:hover .cvr{transform:translateY(-3px)}
+#sec-cover .card b{font-weight:600;font-size:13px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#sec-cover .card small{color:var(--ink3);font-size:11.5px}
+#sec-cover .empty{padding:60px 0;color:var(--ink2);text-align:center}
+#sec-cover dialog{border:0;padding:0;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 40px);background:var(--surface);color:var(--ink);border-radius:10px}
+#sec-cover dialog::backdrop{background:rgba(10,14,18,.6)}
+#sec-cover .det{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:26px;padding:24px;position:relative}
+#sec-cover .det>div{min-width:0}
+#sec-cover .det .cvr.big{width:100%;display:block;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#sec-cover .det h2{font:700 23px/1.3 var(--serif);margin:0 22px 4px 0;text-wrap:balance}
+#sec-cover .det .sub{color:var(--ink2);margin:0 0 12px}
+#sec-cover .det .note{border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:10px 0 16px}
+#sec-cover .kv{display:grid;grid-template-columns:76px 1fr;gap:4px 10px;font-size:13px;margin:0}
+#sec-cover .kv dt{color:var(--ink3)}
+#sec-cover .kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+#sec-cover .pal{display:flex;height:26px;border-radius:4px;overflow:hidden;margin:12px 0 4px}
+#sec-cover .pal i{display:block;height:100%}
+#sec-cover .xbtn{position:absolute;right:12px;top:10px;border:0;background:none;font-size:22px;line-height:1;color:var(--ink2);padding:6px}
+#sec-cover .acts{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+#sec-cover .btn{border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);border-radius:7px;padding:7px 13px;text-decoration:none;font-size:13px}
+#sec-cover .btn.ghost{background:none;color:var(--accent)}
+#sec-cover .sim{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:6px}
+#sec-cover .sim button{border:0;background:none;padding:0}
+#sec-cover .sim .cvr{width:100%;display:block}
+#sec-cover h4.sh{font-size:12px;color:var(--ink3);margin:16px 0 4px}
+#sec-cover .wrap{padding-block:20px 60px;padding-left:var(--gl);padding-right:var(--gr);max-width:1280px}
+#sec-cover .intro{max-width:66ch;color:var(--ink2);margin:0 0 20px}
+#sec-cover .style{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:24px;padding:22px 0;border-top:1px solid var(--line)}
+#sec-cover .style>div{min-width:0}
+#sec-cover .style h2{font:700 21px/1.3 var(--serif);margin:0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#sec-cover .tagnew{font:700 11px/1.6 var(--sans);background:var(--new-soft);color:var(--new);border-radius:4px;padding:0 7px}
+#sec-cover .style .n{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+#sec-cover .style p{margin:6px 0 10px;max-width:60ch}
+#sec-cover .style p.why{font-size:12.5px;color:var(--ink2);border-left:3px solid var(--new);padding-left:10px}
+#sec-cover .tags{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+#sec-cover .tags span{background:var(--accent-soft);border-radius:4px;padding:1px 7px;font-size:12px}
+#sec-cover .mini{display:grid;grid-template-columns:96px 1fr 34px;gap:6px;align-items:center;font-size:12px;margin:2px 0}
+#sec-cover .mini .tr{height:7px;background:var(--heat0);border-radius:0 4px 4px 0}
+#sec-cover .mini .tr i{display:block;height:100%;background:var(--accent);border-radius:0 4px 4px 0}
+#sec-cover .mini .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+#sec-cover .samples{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;align-items:end}
+#sec-cover .samples button{border:0;background:none;padding:0}
+#sec-cover .samples .cvr{width:100%;display:block;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+#sec-cover h2.sec{font:700 19px/1.3 var(--serif);margin:34px 0 4px}
+#sec-cover h2.sec:first-of-type{margin-top:0}
+#sec-cover .tblwrap{overflow-x:auto;margin-bottom:8px}
+#sec-cover table.heat{border-collapse:separate;border-spacing:2px;font-size:12.5px}
+#sec-cover table.heat th{font-weight:500;color:var(--ink2);padding:4px 6px;text-align:left}
+#sec-cover table.heat thead th{vertical-align:bottom;min-width:62px;width:62px;padding:4px 3px;font-size:11.5px;line-height:1.25;word-break:keep-all;text-align:center}
+#sec-cover table.heat thead th.nw span{color:var(--new);font-weight:700}
+#sec-cover table.heat tbody th{white-space:nowrap;color:var(--ink);font-weight:600;padding-right:12px}
+#sec-cover table.heat td{height:38px;text-align:center;font-variant-numeric:tabular-nums;border-radius:3px;padding:0}
+#sec-cover table.heat td button{width:100%;height:100%;border:0;background:none;color:inherit;border-radius:3px}
+#sec-cover .legend{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink2);margin-bottom:26px;flex-wrap:wrap}
+#sec-cover .legend i{width:26px;height:12px;display:block}
+#sec-cover .pubs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:26px 30px}
+#sec-cover .pub{min-width:0}
+#sec-cover .pub h3{font:700 18px/1.3 var(--serif);margin:0 0 2px}
+#sec-cover .pub .meta{color:var(--ink3);font-size:12.5px;font-variant-numeric:tabular-nums;margin-bottom:8px}
+#sec-cover .pub p{margin:6px 0 0;font-size:13px;color:var(--ink2)}
+#sec-cover .strip{display:flex;height:44px;border-radius:3px;overflow:hidden}
+#sec-cover .strip i{flex:1 1 0;display:block;min-width:0}
+#sec-cover .serrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;border:0;border-top:1px solid var(--line);background:none;padding:8px 0;text-align:left}
+#sec-cover .serrow:hover b{color:var(--accent)}
+#sec-cover .serrow b{font-weight:600;font-size:13.5px}
+#sec-cover .serrow span{display:block;color:var(--ink3);font-size:12px}
+#sec-cover .serrow .th{display:flex;gap:4px}
+#sec-cover .serrow .th .cvr{height:54px;width:auto;flex:none;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+#sec-cover table.crit{border-collapse:collapse;font-size:13px;min-width:560px}
+#sec-cover table.crit th,#sec-cover table.crit td{border-bottom:1px solid var(--line);padding:6px 12px 6px 0;text-align:left;vertical-align:top}
+#sec-cover table.crit td.num,#sec-cover table.crit th.num{text-align:right;font-variant-numeric:tabular-nums}
+#sec-cover table.crit th{color:var(--ink3);font-weight:600;font-size:12px}
+#sec-cover ul.rules{margin:8px 0 16px;padding-left:18px;max-width:72ch;color:var(--ink2)}
+#sec-cover .tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--bg);padding:5px 9px;border-radius:5px;font-size:12px;max-width:240px}
+#sec-cover footer.src{padding-block:12px 30px;padding-left:var(--gl);padding-right:var(--gr);color:var(--ink3);font-size:12px;border-top:1px solid var(--line)}
+@media (max-width:820px){#sec-cover .browse{grid-template-columns:minmax(0,1fr)}#sec-cover aside.filters{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:12px var(--gr) 12px var(--gl)}#sec-cover aside.filters summary{display:block;font-weight:700;padding:4px 0;cursor:pointer}#sec-cover .det{grid-template-columns:minmax(0,1fr)}#sec-cover .style{grid-template-columns:minmax(0,1fr)}#sec-cover .samples{grid-template-columns:repeat(3,minmax(0,1fr))}#sec-cover .grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}#sec-cover nav.tabs{margin-left:0;max-width:100%;overflow-x:auto}#sec-cover nav.tabs button{padding:9px 12px}#sec-cover .shelf{padding-left:var(--gl)}}
+#sec-promo header.top{display:flex;gap:12px 28px;align-items:flex-end;flex-wrap:wrap;padding-block:20px 0;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--line)}
+#sec-promo .brand{min-width:0}
+#sec-promo .brand .h1{font:700 26px/1.2 var(--serif);margin:0;letter-spacing:-.01em}
+#sec-promo .brand .h1 small{font:500 15px/1 var(--sans);color:var(--ink2);margin-left:6px;letter-spacing:0}
+#sec-promo .brand p{margin:3px 0 10px;color:var(--ink2);font-size:13px}
+#sec-promo .dl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+#sec-promo .dl button{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:6px 12px;font-size:12.5px}
+#sec-promo .dl button:hover{border-color:var(--accent);color:var(--accent)}
+#sec-promo .dl button[disabled]{opacity:.5;cursor:default}
+#sec-promo .dlmsg{font-size:12px;color:var(--ink2)}
+#sec-promo nav.tabs{display:flex;gap:2px;margin-left:auto}
+#sec-promo nav.tabs button{border:0;background:none;padding:9px 16px;border-bottom:3px solid transparent;color:var(--ink2);font-weight:500;white-space:nowrap}
+#sec-promo nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+#sec-promo .browse{display:grid;grid-template-columns:272px minmax(0,1fr);min-height:calc(100vh - 92px)}
+#sec-promo aside.filters{border-right:1px solid var(--line);padding:16px 14px 40px var(--gl);overflow:auto;position:sticky;top:var(--bar);max-height:calc(100vh - var(--bar))}
+#sec-promo aside.filters summary{display:none}
+#sec-promo .fgroup{margin-bottom:18px}
+#sec-promo .fgroup h3{font-size:12px;letter-spacing:.04em;color:var(--ink3);margin:0 0 6px;font-weight:700}
+#sec-promo .opt{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;padding:4px 7px;border-radius:5px;text-align:left;color:var(--ink)}
+#sec-promo .opt:hover{background:var(--line)}
+#sec-promo .opt[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+#sec-promo .opt .c{margin-left:auto;font-variant-numeric:tabular-nums;font-size:12px;opacity:.7}
+#sec-promo .opt[disabled]{opacity:.35;cursor:default}
+#sec-promo .nw{font-size:10.5px;border:1px solid currentColor;border-radius:3px;padding:0 4px;line-height:1.5;flex:none;color:var(--new);font-weight:500}
+#sec-promo .opt[aria-pressed="true"] .nw{color:inherit}
+#sec-promo .shelf{padding:16px var(--gr) 60px 20px;min-width:0}
+#sec-promo .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+#sec-promo .bar input[type=search]{flex:1 1 260px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+#sec-promo .bar select{padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+#sec-promo .count{font-variant-numeric:tabular-nums;color:var(--ink2);font-size:13px}
+#sec-promo .hint{margin:0 0 10px;color:var(--ink3);font-size:12px}
+#sec-promo .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+#sec-promo .chip{border:1px solid var(--accent);color:var(--accent);background:none;border-radius:999px;padding:2px 10px;font-size:12.5px}
+#sec-promo .chip.clear{border-color:var(--line);color:var(--ink2)}
+#sec-promo .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:24px 16px}
+#sec-promo .card{border:0;background:none;padding:0;text-align:left;display:flex;flex-direction:column;gap:5px;min-width:0}
+#sec-promo .ph{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.2),0 6px 14px rgba(0,0,0,.12);background:var(--surface);max-width:100%}
+#sec-promo .th{position:absolute;inset:0;background-size:400% 400%;background-repeat:no-repeat;transition:transform .15s}
+#sec-promo .card:hover .th{transform:translateY(-2px)}
+#sec-promo .card .len{position:absolute;right:6px;bottom:6px;background:rgba(15,20,24,.78);color:#fff;font-size:11px;padding:1px 7px;border-radius:999px;font-variant-numeric:tabular-nums}
+#sec-promo .card b{font-weight:600;font-size:13px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#sec-promo .card small{color:var(--ink3);font-size:11.5px}
+#sec-promo .card q{font-size:12px;color:var(--ink2);quotes:"“" "”";display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#sec-promo .card small.why{color:var(--accent)}
+#sec-promo .empty{padding:60px 0;color:var(--ink2);text-align:center}
+#sec-promo dialog{border:0;padding:0;width:min(1080px,calc(100vw - 32px));height:calc(100vh - 40px);max-height:calc(100vh - 40px);background:var(--surface);color:var(--ink);border-radius:10px}
+#sec-promo dialog::backdrop{background:rgba(10,14,18,.6)}
+#sec-promo .det{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);height:100%;position:relative}
+#sec-promo .det .long{overflow-y:auto;background:var(--bg);display:flex;justify-content:center;align-items:flex-start;padding:18px}
+#sec-promo .det .long img{width:min(100%,640px);height:auto;display:block;box-shadow:0 4px 18px rgba(0,0,0,.18);background:var(--surface)}
+#sec-promo .det .side{overflow-y:auto;padding:24px 22px;border-left:1px solid var(--line)}
+#sec-promo .det h2{font:700 21px/1.3 var(--serif);margin:0 26px 4px 0}
+#sec-promo .det .sub{color:var(--ink2);margin:0 0 12px;font-size:13px}
+#sec-promo .det .cover{display:flex;gap:12px;align-items:flex-end;margin:6px 0 14px}
+#sec-promo .det blockquote{margin:0 0 14px;padding:4px 0 4px 12px;border-left:3px solid var(--accent);font:600 15px/1.45 var(--serif)}
+#sec-promo .kv{display:grid;grid-template-columns:76px 1fr;gap:4px 10px;font-size:13px;margin:0}
+#sec-promo .kv dt{color:var(--ink3)}
+#sec-promo .kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+#sec-promo .tags{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 6px}
+#sec-promo .tags span{background:var(--accent-soft);border-radius:4px;padding:1px 7px;font-size:12px}
+#sec-promo .tags span.it{background:var(--new-soft);color:var(--new)}
+#sec-promo .xbtn{position:absolute;right:10px;top:8px;border:0;background:none;font-size:22px;line-height:1;color:var(--ink2);padding:6px;z-index:2}
+#sec-promo .acts{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+#sec-promo .btn{border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);border-radius:7px;padding:7px 13px;text-decoration:none;font-size:13px}
+#sec-promo .btn.ghost{background:none;color:var(--accent)}
+#sec-promo .also{font-size:12.5px;color:var(--ink2);margin-top:10px}
+#sec-promo .wrap{padding-block:20px 60px;padding-left:var(--gl);padding-right:var(--gr);max-width:1280px}
+#sec-promo .intro{max-width:70ch;color:var(--ink2);margin:0 0 20px}
+#sec-promo h2.sec{font:700 19px/1.3 var(--serif);margin:28px 0 10px;text-wrap:balance}
+#sec-promo p.secnote{margin:-4px 0 12px;color:var(--ink3);font-size:12.5px;max-width:78ch}
+#sec-promo .cov{display:grid;grid-template-columns:minmax(120px,200px) minmax(0,1fr) minmax(96px,auto);gap:8px 12px;align-items:center;max-width:860px;font-size:13px}
+#sec-promo .cov .nm{display:flex;gap:6px;align-items:center;min-width:0}
+#sec-promo .cov .tr{height:14px;background:var(--heat0);border-radius:0 4px 4px 0;overflow:hidden;display:block;width:100%}
+#sec-promo .cov button.tr{border:0;padding:0}
+#sec-promo .cov .tr i{display:block;height:100%;background:var(--accent)}
+#sec-promo .cov .tr.it i{background:var(--new)}
+#sec-promo .cov .v{font-variant-numeric:tabular-nums;color:var(--ink2);white-space:nowrap}
+#sec-promo .cov .v em{font-style:normal;color:var(--ink3);margin-left:8px}
+#sec-promo .tblwrap{overflow-x:auto;margin-bottom:8px}
+#sec-promo table.heat{border-collapse:separate;border-spacing:2px;font-size:12.5px}
+#sec-promo table.heat th{font-weight:500;color:var(--ink2);padding:4px 6px;text-align:left}
+#sec-promo table.heat thead th{vertical-align:bottom;width:88px;padding:4px 3px;font-size:11.5px;line-height:1.25;word-break:keep-all;text-align:center}
+#sec-promo table.heat tbody th{white-space:nowrap;color:var(--ink);font-weight:600;padding-right:12px}
+#sec-promo table.heat tbody th .nw{margin-left:6px}
+#sec-promo table.heat td{width:88px;height:32px;text-align:center;font-variant-numeric:tabular-nums;border-radius:3px;padding:0}
+#sec-promo table.heat td.all{box-shadow:inset 0 0 0 1px var(--line)}
+#sec-promo table.heat td button{width:100%;height:100%;border:0;background:none;color:inherit;border-radius:3px}
+#sec-promo .legend{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink2);margin-bottom:22px}
+#sec-promo .legend i{width:26px;height:12px;display:block}
+#sec-promo .firsts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(360px,100%),1fr));gap:26px 30px}
+#sec-promo .firsts h3{font:700 17px/1.3 var(--serif);margin:0}
+#sec-promo .firsts .n{color:var(--ink3);font-size:12.5px}
+#sec-promo .firsts p{margin:4px 0 8px;font-size:13px;color:var(--ink2)}
+#sec-promo .samples{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#sec-promo .samples button{border:0;background:var(--surface);padding:0;aspect-ratio:3/4;overflow:hidden;border-radius:3px;position:relative}
+#sec-promo ul.miss{margin:0;padding-left:18px;max-width:86ch;font-size:13px}
+#sec-promo ul.miss li{margin-bottom:4px}
+#sec-promo ul.miss small{color:var(--ink3)}
+#sec-promo .tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--bg);padding:5px 9px;border-radius:5px;font-size:12px;max-width:240px}
+#sec-promo footer.src{padding-block:12px 30px;padding-left:var(--gl);padding-right:var(--gr);color:var(--ink3);font-size:12px;border-top:1px solid var(--line)}
+@media (max-width:820px){#sec-promo .browse{grid-template-columns:1fr}#sec-promo aside.filters{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:12px var(--gr) 12px var(--gl)}#sec-promo aside.filters summary{display:block;font-weight:700;padding:4px 0;cursor:pointer}#sec-promo .det{grid-template-columns:1fr;grid-template-rows:auto auto;overflow-y:auto}#sec-promo .det .side{border-left:0;order:-1;overflow:visible}#sec-promo .det .long{overflow:visible;padding:12px}#sec-promo .grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}#sec-promo nav.tabs{margin-left:0;max-width:100%;overflow-x:auto}#sec-promo nav.tabs button{padding:9px 12px}#sec-promo .shelf{padding-left:var(--gl)}#sec-promo .samples{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}#sec-promo .cov{grid-template-columns:minmax(96px,132px) minmax(0,1fr) auto;gap:8px}#sec-promo .cov .v em{display:none}}
+#sec-sns a{color:var(--accent)}
+#sec-sns header.top{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;padding:20px var(--gr) 0 var(--gl);border-bottom:1px solid var(--line)}
+#sec-sns .brand{min-width:0}
+#sec-sns .brand .h1{font:700 26px/1.2 var(--serif);margin:0;letter-spacing:-.01em;text-wrap:balance}
+#sec-sns .brand p{margin:3px 0 12px;color:var(--ink2);font-size:13px}
+#sec-sns nav.tabs{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+#sec-sns nav.tabs button{border:0;background:none;padding:9px 16px;border-bottom:3px solid transparent;color:var(--ink2);font-weight:500}
+#sec-sns nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+#sec-sns .browse{display:grid;grid-template-columns:260px minmax(0,1fr)}
+#sec-sns aside.filters{border-right:1px solid var(--line);padding:16px 14px 40px var(--gl);position:sticky;top:var(--bar);max-height:calc(100vh - var(--bar));overflow:auto}
+#sec-sns .fgroup{margin-bottom:18px}
+#sec-sns .fgroup h3{font-size:12px;letter-spacing:.04em;color:var(--ink3);margin:0 0 6px;font-weight:700}
+#sec-sns .opt{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;padding:4px 7px;border-radius:5px;text-align:left;color:var(--ink)}
+#sec-sns .opt:hover{background:var(--line)}
+#sec-sns .opt[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+#sec-sns .opt .c{margin-left:auto;font-variant-numeric:tabular-nums;font-size:12px;opacity:.75}
+#sec-sns .dot{width:10px;height:10px;border-radius:50%;flex:none}
+#sec-sns .dot.ig{background:var(--ig)}
+#sec-sns .dot.x{background:var(--x)}
+#sec-sns .dot.th{background:var(--th)}
+#sec-sns .shelf{padding:16px var(--gr) 60px 20px;min-width:0}
+#sec-sns .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+#sec-sns .bar input[type=search]{flex:1 1 240px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+#sec-sns .bar select{padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+#sec-sns .count{font-variant-numeric:tabular-nums;color:var(--ink2);font-size:13px}
+#sec-sns .reset{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:7px 11px;font-size:13px}
+#sec-sns .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+#sec-sns .card{display:grid;grid-template-columns:58px minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:10px;text-align:left;width:100%;color:var(--ink)}
+#sec-sns .card:hover{border-color:var(--ink3)}
+#sec-sns .card .cvr{width:58px;border-radius:3px;align-self:start}
+#sec-sns .card .t{font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#sec-sns .card .m{font-size:12px;color:var(--ink3);margin:2px 0 6px}
+#sec-sns .chips{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+#sec-sns .chip{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:1px 7px;border-radius:10px;font-variant-numeric:tabular-nums}
+#sec-sns .chip.ig{background:var(--ig-soft);color:var(--ig)}
+#sec-sns .chip.x{background:var(--x-soft);color:var(--x)}
+#sec-sns .chip.th{background:var(--th-soft);color:var(--th)}
+#sec-sns .chip.none{background:none;color:var(--ink3);padding-left:0}
+#sec-sns .strip{display:flex;height:4px;border-radius:2px;overflow:hidden;margin-top:7px;background:var(--line)}
+#sec-sns .strip i{display:block;height:100%}
+#sec-sns .dl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+#sec-sns .dl button{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:6px 11px;font-size:12.5px}
+#sec-sns .dl button:hover{border-color:var(--ink3)}
+#sec-sns .dl button:disabled{opacity:.6;cursor:progress}
+#sec-sns .dlmsg{font-size:12px;color:var(--ink2)}
+#sec-sns .more{margin:16px auto 0;display:block;border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:9px 18px}
+#sec-sns dialog{border:0;border-radius:12px;padding:0;width:min(780px,calc(100vw - 24px));max-height:calc(100vh - 40px);background:var(--surface);color:var(--ink)}
+#sec-sns dialog::backdrop{background:rgba(10,14,18,.55)}
+#sec-sns .dhead{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:16px;padding:18px 18px 12px;border-bottom:1px solid var(--line)}
+#sec-sns .dhead .cvr{width:84px;border-radius:3px;align-self:start}
+#sec-sns .dhead h2{font:700 20px/1.3 var(--serif);margin:0 0 4px;text-wrap:balance}
+#sec-sns .dhead .m{color:var(--ink2);font-size:13px}
+#sec-sns .close{border:0;background:none;font-size:22px;line-height:1;color:var(--ink2);align-self:start;padding:2px 6px}
+#sec-sns .dsum{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+#sec-sns .dsum b{font-size:20px;font-variant-numeric:tabular-nums}
+#sec-sns .dsum span{display:block;font-size:12px;color:var(--ink3)}
+#sec-sns .dfilter{display:flex;gap:6px;padding:10px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+#sec-sns .dfilter button{border:1px solid var(--line);background:none;border-radius:14px;padding:3px 11px;font-size:12.5px}
+#sec-sns .dfilter button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+#sec-sns .tl{list-style:none;margin:0;padding:6px 18px 18px;overflow:auto;max-height:calc(100vh - 300px)}
+#sec-sns .tl li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+#sec-sns .tl .when{font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
+#sec-sns .tl .when b{display:block;color:var(--ink);font-size:13px}
+#sec-sns .tl .who{font-size:12px;color:var(--ink3);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#sec-sns .tl .txt{margin:4px 0 4px;white-space:pre-wrap;overflow-wrap:anywhere}
+#sec-sns .tl .sc{margin:6px 0 4px;padding:6px 10px;border-left:2px solid var(--line);color:var(--ink2);white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}
+#sec-sns .tl .eng{font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#sec-sns .fmt{font-size:11.5px;border:1px solid var(--line);border-radius:8px;padding:0 6px;color:var(--ink2)}
+#sec-sns .plabel{font-weight:700;font-size:11.5px;padding:0 6px;border-radius:8px}
+#sec-sns .plabel.ig{background:var(--ig-soft);color:var(--ig)}
+#sec-sns .plabel.x{background:var(--x-soft);color:var(--x)}
+#sec-sns .plabel.th{background:var(--th-soft);color:var(--th)}
+#sec-sns .empty{padding:28px 18px;color:var(--ink2)}
+#sec-sns .linkbtn{border:0;background:none;color:var(--accent);padding:0;text-decoration:underline;text-underline-offset:2px;text-align:left}
+#sec-sns .page{padding:18px var(--gr) 60px var(--gl);max-width:1220px}
+#sec-sns .page h2{font:700 19px/1.3 var(--serif);margin:26px 0 4px}
+#sec-sns .page h2:first-child{margin-top:4px}
+#sec-sns .lede{color:var(--ink2);margin:0 0 12px;font-size:13.5px;max-width:110ch}
+#sec-sns .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:6px}
+#sec-sns .tile{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:12px 14px}
+#sec-sns .tile b{display:block;font-size:24px;font-variant-numeric:tabular-nums;line-height:1.2}
+#sec-sns .tile span{font-size:12.5px;color:var(--ink2)}
+#sec-sns .tblwrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:9px}
+#sec-sns table{border-collapse:collapse;width:100%;font-size:13px}
+#sec-sns th,#sec-sns td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle;white-space:nowrap}
+#sec-sns th{font-size:12px;color:var(--ink3);font-weight:700}
+#sec-sns td.n,#sec-sns th.n{text-align:right;font-variant-numeric:tabular-nums}
+#sec-sns td.wrap{white-space:normal;min-width:220px}
+#sec-sns tr:last-child td{border-bottom:0}
+#sec-sns .cov{display:flex;align-items:center;gap:8px;min-width:140px}
+#sec-sns .cov .track{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+#sec-sns .cov .fill{height:100%}
+#sec-sns .cov .v{width:38px;text-align:right;font-variant-numeric:tabular-nums;font-size:12px}
+#sec-sns .stack{display:flex;height:22px;border-radius:4px;overflow:hidden;min-width:260px;background:var(--line)}
+#sec-sns .stack i{display:block;height:100%}
+#sec-sns .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin:8px 0}
+#sec-sns .legend span{display:inline-flex;align-items:center;gap:5px}
+#sec-sns .legend i{width:12px;height:12px;border-radius:2px;display:inline-block}
+#sec-sns .heat td.h{text-align:center;font-variant-numeric:tabular-nums;font-size:12.5px}
+#sec-sns .toplist{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:9px}
+#sec-sns .toplist li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line);align-items:center}
+#sec-sns .toplist li:last-child{border-bottom:0}
+#sec-sns .toplist .rk{color:var(--ink3);font-variant-numeric:tabular-nums}
+#sec-sns .toplist .bk{font-size:12px;color:var(--ink3)}
+#sec-sns .toplist .ex{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sec-sns .toplist .eng{font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+#sec-sns .note{font-size:12.5px;color:var(--ink2);background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:12px 14px;margin-top:22px;max-width:90ch}
+#sec-sns .note ul{margin:6px 0 0;padding-left:18px}
+@media (max-width:820px){#sec-sns .browse{grid-template-columns:minmax(0,1fr)}#sec-sns .browse>*{min-width:0}#sec-sns .bar select{flex:1 1 auto}#sec-sns aside.filters{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:12px var(--gr) 12px var(--gl)}#sec-sns aside.filters .fgroup{margin-bottom:10px}#sec-sns .fgroup .opts{display:flex;flex-wrap:wrap;gap:4px}#sec-sns .fgroup .opt{width:auto;border:1px solid var(--line)}#sec-sns .shelf{padding-left:var(--gl)}#sec-sns header.top{padding-top:16px}#sec-sns nav.tabs{margin-left:0}#sec-sns .grid{grid-template-columns:minmax(0,1fr)}#sec-sns .dhead{grid-template-columns:64px minmax(0,1fr) auto}#sec-sns .dhead .cvr{width:64px}#sec-sns .tl li{grid-template-columns:1fr;gap:2px}}
+</style>
+</head>
+<body class="locked">
+
+
+<header class="appbar">
+  <button class="logo" data-nav="home">IT 출판사 시장 지도<span>2026</span></button>
+  <nav class="appnav" aria-label="지도 고르기">
+    <button class="home" data-nav="home">개요</button>
+    <button data-nav="cover"><i>1</i>표지<span class="lb2"> 지도</span></button>
+    <button data-nav="promo"><i>2</i>상세페이지</button>
+    <button data-nav="sns"><i>3</i>SNS<span class="lb2"> 홍보</span></button>
+    <button data-nav="report"><i>4</i>전략<span class="lb2"> 보고서</span></button>
+  </nav>
+</header>
+
+<section id="sec-home" class="app-sec"><div class="home" id="home"></div></section>
+<section id="sec-cover" class="app-sec" hidden>
+<header class="top">
+  <div class="brand">
+    <h2 class="h1">표지 지도 2026 <small>IT 출판사</small></h2>
+    <p id="c-sum"></p>
+    <div class="dl" id="c-dl" hidden>
+      <button id="c-dlZip">분석 자료 내려받기 (ZIP)</button>
+      <button id="c-dlCsv">도서 목록 내려받기 (CSV)</button>
+      <span class="dlmsg" id="c-dlMsg" role="status"></span>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-v="browse" aria-selected="true">표지 찾기</button>
+    <button role="tab" data-v="dict" aria-selected="false">스타일 사전</button>
+    <button role="tab" data-v="comp" aria-selected="false">출판사 비교</button>
+  </nav>
+</header>
+<div class="main">
+  <section class="view" id="c-browse">
+    <div class="browse">
+      <aside class="filters"><details id="c-fd" open><summary>필터 열기</summary><div class="fbody" id="c-filters"></div></details></aside>
+      <div class="shelf">
+        <div class="bar">
+          <input type="search" id="c-q" placeholder="제목, 저자, 시리즈, 소재, 특징으로 찾기 (예: 클로드, 로봇, Do it!)" aria-label="검색">
+          <select id="c-sort" aria-label="정렬">
+            <option value="date">최신 출간순</option>
+            <option value="bright">밝은 표지순</option>
+            <option value="dark">어두운 표지순</option>
+            <option value="sat">색이 강한 순</option>
+            <option value="pub">출판사순</option>
+          </select>
+          <span class="count" id="c-count"></span>
+        </div>
+        <p class="hint">글자로 찾습니다. 제목, 부제, 시리즈, 저자, 분야와 표지 분석 메모(소재·기법·색·분위기)가 대상입니다. 표지 이미지 속 글자를 직접 읽지는 않습니다.</p>
+        <div class="chips" id="c-chips"></div>
+        <div class="grid" id="c-grid"></div>
+        <div class="empty" id="c-empty" hidden>조건에 맞는 표지가 없습니다. 위의 필터를 하나씩 풀어 보세요.</div>
+      </div>
+    </div>
+  </section>
+  <section class="view wrap" id="c-dict" hidden></section>
+  <section class="view wrap" id="c-comp" hidden></section>
+</div>
+<footer class="src" id="c-src"></footer>
+<dialog id="c-dlg"></dialog>
+<div class="tip" id="c-tip" hidden></div>
+</section>
+<section id="sec-promo" class="app-sec" hidden>
+<header class="top">
+  <div class="brand">
+    <h2 class="h1">상세페이지 지도 2026 <small>IT 출판사</small></h2>
+    <p id="p-sum"></p>
+    <div class="dl" id="p-dl" hidden>
+      <button id="p-dlData">분석 자료 내려받기 (ZIP)</button>
+      <button id="p-dlCsv">목록 내려받기 (CSV)</button>
+      <span class="dlmsg" id="p-dlMsg" role="status"></span>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-v="browse" aria-selected="true">상세페이지 찾기</button>
+    <button role="tab" data-v="parts" aria-selected="false">구성 분석</button>
+    <button role="tab" data-v="comp" aria-selected="false">출판사 비교</button>
+  </nav>
+</header>
+<div class="main">
+  <section class="view" id="p-browse">
+    <div class="browse">
+      <aside class="filters"><details id="p-fd" open><summary>필터 열기</summary><div id="p-filters"></div></details></aside>
+      <div class="shelf">
+        <div class="bar">
+          <input type="search" id="p-q" placeholder="제목, 헤드카피, 특징으로 찾기 (예: 로드맵, 베타리더, 클로드)" aria-label="검색">
+          <select id="p-sort" aria-label="정렬">
+            <option value="date">최신 출간순</option>
+            <option value="long">긴 상세페이지순</option>
+            <option value="short">짧은 상세페이지순</option>
+            <option value="sec">구획 많은 순</option>
+            <option value="pub">출판사순</option>
+          </select>
+          <span class="count" id="p-count"></span>
+        </div>
+        <p class="hint">글자로 찾습니다. 제목, 저자, 분야, 첫 화면 헤드카피, 분석 메모와 구성 요소가 대상입니다. 카드 오른쪽 아래 숫자는 휴대폰 화면 기준 길이입니다. <span class="nw">IT</span> 표시는 IT서에 맞춰 더한 구성 요소입니다.</p>
+        <div class="chips" id="p-chips"></div>
+        <div class="grid" id="p-grid"></div>
+        <div class="empty" id="p-empty" hidden>조건에 맞는 상세페이지가 없습니다. 필터를 하나씩 풀어 보세요.</div>
+      </div>
+    </div>
+  </section>
+  <section class="view wrap" id="p-parts" hidden></section>
+  <section class="view wrap" id="p-comp" hidden></section>
+</div>
+<footer class="src" id="p-src"></footer>
+<dialog id="p-dlg"></dialog>
+<div class="tip" id="p-tip" hidden></div>
+</section>
+<section id="sec-sns" class="app-sec" hidden><div class="loading" id="sns-loading">SNS 게시물 3,512건을 불러오는 중입니다…</div>
+<header class="top">
+  <div class="brand">
+    <h2 class="h1">SNS 홍보 지도 2026 (IT 출판사)</h2>
+    <p id="s-sub">IT 표지 지도 도서를 출판사 공식 인스타그램·X·스레드 게시물과 짝지었습니다</p>
+    <div class="dl" id="s-dl" hidden>
+      <button id="s-dlCsv">게시물 목록 내려받기 (CSV)</button>
+      <span class="dlmsg" id="s-dlMsg" role="status"></span>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-v="books">도서별 홍보</button>
+    <button role="tab" aria-selected="false" data-v="pubs">출판사 비교</button>
+    <button role="tab" aria-selected="false" data-v="timing">홍보 시점·방식</button>
+  </nav>
+</header>
+
+<div class="main">
+<section class="view" id="s-v-books">
+  <div class="browse">
+    <aside class="filters" id="s-filters"></aside>
+    <div class="shelf">
+      <div class="bar">
+        <input type="search" id="s-q" placeholder="제목·저자·게시물 문구 검색" aria-label="검색">
+        <select id="s-sort" aria-label="정렬">
+          <option value="n">게시물 많은 순</option>
+          <option value="date">출간일 최신 순</option>
+          <option value="eng">X 반응 많은 순</option>
+          <option value="span">홍보 기간 긴 순</option>
+        </select>
+        <button class="reset" id="s-reset">조건 지우기</button>
+        <span class="count" id="s-count"></span>
+      </div>
+      <div class="grid" id="s-grid"></div>
+      <button class="more" id="s-more" hidden>더 보기</button>
+    </div>
+  </div>
+</section>
+<section class="view page" id="s-v-pubs" hidden></section>
+<section class="view page" id="s-v-timing" hidden></section>
+</div>
+
+<dialog id="s-dlg" aria-labelledby="dtitle"></dialog>
+
+</section>
+<section id="sec-report" class="app-sec" hidden><div class="rep"><nav class="toc" id="r-toc" aria-label="보고서 목차"></nav><article class="rbody" id="r-body"><p class="loading">보고서를 불러오는 중입니다…</p></article></div></section>
+
+<style>
+/* 로그인 화면과 불러오는 동안의 화면 */
+body.locked .appbar,body.locked .app-sec{display:none!important}
+.gate{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px));box-sizing:border-box}
+.gcard{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:8px;box-sizing:border-box}
+.gcard h1{font-size:19px;margin:0 0 2px;letter-spacing:-.01em;text-wrap:balance}
+.gcard .gl{margin:0 0 10px;color:var(--ink2);font-size:13px;line-height:1.55}
+.gcard label{font-size:12.5px;color:var(--ink2);font-weight:600;margin-top:6px}
+.gcard input{padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;min-width:0}
+.gcard input:focus-visible,.gcard button:focus-visible,.linkbtn:focus-visible,.rpick select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gprimary{margin-top:12px;padding:11px 12px;border:0;border-radius:8px;background:var(--accent);color:var(--on-accent);font:inherit;font-weight:600;cursor:pointer}
+.gprimary[disabled]{opacity:.6;cursor:default}
+.grow{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px}
+.grow button,.linkbtn{border:0;background:none;padding:4px 0;color:var(--accent);font:inherit;font-size:12.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.gmsg{min-height:1.5em;margin:6px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink2)}
+.gmsg.err{color:var(--new)}
+.rpick{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink2)}
+.rpick select{font:inherit;padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);font-variant-numeric:tabular-nums}
+</style>
+
+<div id="gate" class="gate" hidden>
+  <form class="gcard" id="g-form" novalidate>
+    <h1>IT 출판사 시장 지도</h1>
+    <p class="gl" id="g-lede">허용 목록에 있는 계정으로 로그인하면 자료를 불러옵니다.</p>
+    <label for="g-email" id="g-email-l">이메일</label>
+    <input id="g-email" type="email" autocomplete="username" inputmode="email">
+    <label for="g-pw" id="g-pw-l">비밀번호</label>
+    <input id="g-pw" type="password" autocomplete="current-password">
+    <button type="submit" class="gprimary" id="g-in">로그인</button>
+    <div class="grow" id="g-more">
+      <button type="button" id="g-up">처음이면 계정 만들기</button>
+      <button type="button" id="g-reset">비밀번호 다시 정하기</button>
+    </div>
+    <p class="gmsg" id="g-msg" role="status"></p>
+  </form>
+</div>
+<div id="g-wait" class="gate"><p class="gmsg" id="g-wait-msg">자료를 불러오는 중입니다…</p></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.js"></script>
+<script>
+// ---------- 데이터는 Supabase에서 읽는다 ----------
+const SB_URL='https://uerntgyxjeerbdetomlk.supabase.co';
+const SB_KEY='sb_publishable_8EjqrDRU-NTU3cHGyGln9w_NOLtzmTp';   // 공개해도 되는 열쇠. 읽기는 로그인과 허용 목록이 막는다
+const sb=supabase.createClient(SB_URL,SB_KEY);
+const MEDIA=p=>(window.__media&&window.__media[p])||p;
+const DB={};
+
+// 1,000행씩 끊어 모두 읽는다
+DB.all=async(table,cols,orders)=>{
+  let out=[];
+  for(let off=0;;off+=1000){
+    let q=sb.from(table).select(cols);
+    orders.forEach(([c,asc])=>{q=q.order(c,{ascending:asc!==false})});
+    const {data,error}=await q.range(off,off+999);
+    if(error)throw error;
+    out=out.concat(data);
+    if(data.length<1000)return out;
+  }
+};
+
+// 비공개 이미지 주소를 받아 둔다(6일 동안 같은 주소를 써서 브라우저가 그림을 다시 받지 않게 한다)
+DB.sign=async(paths,uid)=>{
+  const KEY='itmap-media-v1', now=Date.now();
+  let c=null; try{c=JSON.parse(localStorage.getItem(KEY)||'null')}catch(_){}
+  if(!c||c.uid!==uid||!(c.exp>now))c={uid,exp:now+6*864e5,urls:{}};
+  const need=paths.filter(p=>!c.urls[p]);
+  for(let i=0;i<need.length;i+=200){
+    const {data,error}=await sb.storage.from('media').createSignedUrls(need.slice(i,i+200),7*86400);
+    if(error)throw error;
+    data.forEach(d=>{if(d.signedUrl&&d.path)c.urls[d.path]=d.signedUrl});
+  }
+  if(need.length){try{localStorage.setItem(KEY,JSON.stringify(c))}catch(_){}}
+  window.__media=c.urls;
+};
+
+const pad2=n=>String(n).padStart(2,'0');
+
+DB.boot=async uid=>{
+  const [books,imgs,meta,sum,reps]=await Promise.all([
+    DB.all('books','id,sprite,data',[['pub_date',false],['id']]),
+    DB.all('promo_images','data',[['thumb_index'],['file']]),
+    sb.from('app_meta').select('key,value'),
+    sb.rpc('sns_summary'),
+    sb.from('reports').select('report_date,title,findings,profiles,doc_url').order('report_date',{ascending:false}),
+  ]);
+  for(const r of [meta,sum,reps])if(r.error)throw r.error;
+  if(!books.length)return false;                    // 허용 목록에 없으면 아무것도 보이지 않는다
+  const M=Object.fromEntries(meta.data.map(r=>[r.key,r.value]));
+  const B=books.map(r=>r.data), I=imgs.map(r=>r.data);
+
+  const C=Object.assign({},M.cover,{books:B});
+  C.styles.forEach(s=>{s.count=B.filter(b=>b.style===s.id).length});
+
+  const has=new Set(); I.forEach(x=>x.books.forEach(id=>has.add(id)));
+  const P=Object.assign({},M.promo,{imgs:I,books:Object.fromEntries(B.filter(b=>has.has(b.id)).map(b=>[b.id,b]))});
+  P.coverage=Object.fromEntries(C.pubs.map(p=>{const L=B.filter(b=>b.pub===p);return [p,{total:L.length,with:L.filter(b=>has.has(b.id)).length}]}));
+
+  const latest=reps.data[0]||{findings:[],profiles:[],report_date:''};
+  const S=sum.data;
+  window.COVER=C; window.PROMO=P; window.REPORTS=reps.data;
+  window.XREF={sprite:Object.fromEntries(books.filter(r=>r.sprite).map(r=>[r.id,r.sprite])),sheets:M.sheets,
+    sns:S.sns,plat:S.plat,posts:S.posts,hit:S.hit,accounts:S.accounts,
+    profiles:latest.profiles,findings:latest.findings,reportAsof:latest.report_date};
+  DB.meta=M; DB.uid=uid;
+
+  const paths=new Set();
+  books.forEach(r=>{if(r.sprite)paths.add('img/cv-'+pad2(r.sprite[0])+'.jpg')});
+  I.forEach(x=>{paths.add('sheets/thumb_'+pad2(Math.floor(x.ti/16)+1)+'.jpg');paths.add('promo/'+x.file)});
+  ['cover-classification.md','cover-collection.md','cover-data.json','promo-classification.md','promo-collection.md','promo-data.json'].forEach(f=>paths.add('files/'+f));
+  await DB.sign([...paths],uid);
+  return true;
+};
+
+// SNS 게시물은 SNS 화면을 처음 열 때 읽는다
+DB.loadSns=async()=>{
+  const n=Math.max(1,Math.ceil(window.XREF.posts/1000));
+  const page=i=>sb.from('sns_posts').select('data,full_text').order('seq').order('url').range(i*1000,i*1000+999);
+  const [acc,...pages]=await Promise.all([sb.from('sns_accounts').select('data'),...Array.from({length:n},(_,i)=>page(i))]);
+  for(const r of [acc,...pages])if(r.error)throw r.error;
+  const rows=pages.flatMap(r=>r.data);
+  const PUBS=['한빛미디어','이지스퍼블리싱','길벗','제이펍','골든래빗','위키북스'], PL=['ig','x','th'];
+  const pi=p=>{const i=PUBS.indexOf(p);return i<0?99:i};
+  const text={}; rows.forEach((r,i)=>{if(r.full_text)text[i]=r.full_text});
+  window.SNSTEXT=text;
+  window.SNS={
+    books:[...window.COVER.books].sort((a,b)=>b.date.localeCompare(a.date)).map(b=>({id:b.id,pub:b.pub,title:b.title,author:b.author,date:b.date,cat:b.topic||b.catTop,it:b.isIT,series:b.series})),
+    posts:rows.map(r=>r.data),
+    accounts:acc.data.map(r=>r.data).sort((a,b)=>pi(a.pub)-pi(b.pub)||a.pub.localeCompare(b.pub)||PL.indexOf(a.plat)-PL.indexOf(b.plat)||(a.acct<b.acct?-1:1)),
+    meta:DB.meta.sns.meta,
+  };
+};
+
+// 보고서는 작성일마다 한 건씩 보관한다. 날짜를 주지 않으면 가장 최근 것을 읽는다
+DB.loadReport=async d=>{
+  d=d||(window.REPORTS[0]||{}).report_date;
+  const {data,error}=await sb.from('reports').select('report_date,title,lead,body,toc,doc_url').eq('report_date',d).single();
+  if(error)throw error;
+  window.REPORT={title:data.title,asof:data.report_date,lead:data.lead||'',body:data.body,toc:data.toc||[],doc_url:data.doc_url};
+};
+
+// ---------- 로그인 ----------
+(()=>{
+  const $=id=>document.getElementById(id);
+  const gate=$('gate'), wait=$('g-wait'), form=$('g-form');
+  const KO={'Invalid login credentials':'이메일이나 비밀번호가 맞지 않습니다.','Email not confirmed':'메일로 받은 확인 링크를 먼저 눌러 주세요.','User already registered':'이미 만든 계정입니다. 로그인해 주세요.'};
+  const say=(t,err)=>{const m=$('g-msg');m.textContent=t;m.classList.toggle('err',!!err)};
+  const fail=e=>say(KO[e&&e.message]||('문제가 생겼습니다: '+((e&&e.message)||e)),true);
+  const here=location.origin+location.pathname;
+  let mode='in', started=false;
+
+  const showGate=t=>{wait.hidden=true;gate.hidden=false;if(t)say(t,true)};
+  const setMode=m=>{
+    mode=m; const np=m==='newpw';
+    $('g-email').hidden=$('g-email-l').hidden=$('g-more').hidden=np;
+    $('g-pw-l').textContent=np?'새 비밀번호(8자 이상)':'비밀번호';
+    $('g-pw').autocomplete=np?'new-password':'current-password';
+    $('g-in').textContent=np?'새 비밀번호 저장':'로그인';
+    $('g-lede').textContent=np?'새로 쓸 비밀번호를 정해 주세요.':'허용 목록에 있는 계정으로 로그인하면 자료를 불러옵니다.';
+  };
+
+  async function start(user){
+    if(started)return; started=true;
+    gate.hidden=true; wait.hidden=false; $('g-wait-msg').textContent='자료를 불러오는 중입니다…';
+    try{
+      const ok=await DB.boot(user.id);
+      if(!ok){started=false;await sb.auth.signOut();showGate(user.email+' 계정은 허용 목록에 없습니다. 관리자에게 이메일 추가를 요청해 주세요.');return}
+    }catch(e){started=false;showGate('자료를 불러오지 못했습니다. 잠시 뒤 다시 시도해 주세요. ('+((e&&e.message)||e)+')');return}
+    const s=document.createElement('script'); s.textContent=$('app-main').textContent; document.body.appendChild(s);
+    wait.hidden=true; document.body.classList.remove('locked');
+    const who=$('h-who'); if(who)who.textContent=user.email+' 로그인 중 ·';
+  }
+
+  sb.auth.onAuthStateChange(ev=>{if(ev==='PASSWORD_RECOVERY'&&!started){setMode('newpw');showGate()}});
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const email=$('g-email').value.trim(), pw=$('g-pw').value, btn=$('g-in');
+    if(mode==='in'&&!email){say('이메일을 넣어 주세요.',true);return}
+    if(pw.length<8){say('비밀번호는 8자 이상이어야 합니다.',true);return}
+    btn.disabled=true; say('확인하는 중입니다…');
+    try{
+      if(mode==='newpw'){
+        const {data,error}=await sb.auth.updateUser({password:pw}); if(error)throw error;
+        setMode('in'); say(''); await start(data.user);
+      }else{
+        const {data,error}=await sb.auth.signInWithPassword({email,password:pw}); if(error)throw error;
+        say(''); await start(data.user);
+      }
+    }catch(err){fail(err)}finally{btn.disabled=false}
+  });
+  $('g-up').addEventListener('click',async()=>{
+    const email=$('g-email').value.trim(), pw=$('g-pw').value;
+    if(!email||pw.length<8){say('이메일과 8자 이상의 비밀번호를 넣은 뒤 눌러 주세요.',true);return}
+    say('계정을 만드는 중입니다…');
+    const {data,error}=await sb.auth.signUp({email,password:pw,options:{emailRedirectTo:here}});
+    if(error)return fail(error);
+    if(data.session)return start(data.user);
+    say('확인 메일을 보냈습니다. 메일의 링크를 누른 뒤 이 화면에서 로그인해 주세요.');
+  });
+  $('g-reset').addEventListener('click',async()=>{
+    const email=$('g-email').value.trim();
+    if(!email){say('이메일을 넣은 뒤 눌러 주세요.',true);return}
+    const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:here});
+    if(error)return fail(error);
+    say('비밀번호를 다시 정하는 메일을 보냈습니다. 메일의 링크를 눌러 주세요.');
+  });
+  document.addEventListener('click',e=>{if(e.target.closest('#h-out')){sb.auth.signOut().then(()=>location.reload())}});
+
+  sb.auth.getSession().then(({data})=>{
+    if(mode==='newpw')return;
+    if(data.session)start(data.session.user); else showGate();
+  });
+})();
+</script>
+
+<script type="text/plain" id="app-main">
+const APP={sec:{},init:{},done:{},cur:null};
+const X=window.XREF;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const DOC_URL='https://claude.ai/artifact/KpkXxqc3daNSirWWh2U9VG';
+const CB=Object.fromEntries(window.COVER.books.map(b=>[b.id,b]));
+const CS=Object.fromEntries(window.COVER.styles.map(s=>[s.id,s]));
+const PB={}; window.PROMO.imgs.forEach(x=>x.books.forEach(id=>{PB[id]=x}));
+const snsN=id=>{const s=X.sns[id];return s?s[0]+s[1]+s[2]:0};
+
+// 표지 한 장: 24장씩 모은 그림에서 해당 칸만 보여 준다(폭에 맞춰 늘고 준다)
+function CV(id,cls,title){
+  const s=X.sprite[id]; cls=cls||'';
+  if(!s)return '<span class="cvr '+cls+'"></span>';
+  const [k,x,y,w,h]=s,[SW,SH]=X.sheets[k];
+  let st='aspect-ratio:'+w+'/'+h+';background-size:'+(SW/w*100).toFixed(3)+'% auto;background-position:'+(SW>w?x/(SW-w)*100:0).toFixed(3)+'% '+(SH>h?y/(SH-h)*100:0).toFixed(3)+'%';
+  if(cls==='fit'&&h/w>1.5)st+=';width:'+(150*w/h).toFixed(2)+'%';
+  return '<span class="cvr lz '+cls+'" data-bg="img/cv-'+String(k).padStart(2,'0')+'.jpg"'+(title?' role="img" aria-label="'+esc(title)+' 표지"':' aria-hidden="true"')+' style="'+st+'"></span>';
+}
+// 화면에 들어올 때 그림을 불러온다
+const lzio=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.style.backgroundImage='url("'+MEDIA(t.dataset.bg)+'")';t.classList.remove('lz');lzio.unobserve(t)}}),{rootMargin:'600px'}):null;
+const lzOne=t=>{if(lzio)lzio.observe(t);else{t.style.backgroundImage='url("'+MEDIA(t.dataset.bg)+'")';t.classList.remove('lz')}};
+new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType!==1)return;if(n.classList.contains('lz'))lzOne(n);n.querySelectorAll('.lz').forEach(lzOne)}))).observe(document.body,{childList:true,subtree:true});
+
+APP.downloads=()=>Promise.resolve({save:async({filename,data})=>{const b=data instanceof Blob?data:new Blob([data]);const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}});
+
+// 다른 지도로 건너가는 단추
+APP.xl=(id,cur)=>{
+  const b=CB[id]; if(!b)return '';
+  const p=PB[id], n=snsN(id), st=CS[b.style];
+  const it=[['cover','표지 지도',st?st.ko:''],['promo','상세페이지 지도',p?'휴대폰 '+p.screens.toFixed(1)+'화면':'이미지 없음',!p],['sns','SNS 홍보 지도',n?'게시물 '+n+'건':'게시물 없음']].filter(x=>x[0]!==cur);
+  return '<div class="xl"><span class="xlh">이 책을 다른 지도에서 보기</span><div class="xlb">'+it.map(([k,t,v,dis])=>'<button class="xlbtn" data-go="'+k+':'+id+'"'+(dis?' disabled':'')+'><b>'+t+'</b><small>'+esc(v)+'</small></button>').join('')+'</div></div>';
+};
+
+const DEF={cover:'browse',promo:'browse',sns:'books'};
+APP.setHash=(k,sub,push)=>{
+  const h=k==='home'?'':(sub&&sub!==DEF[k]?k+'-'+sub:k);
+  const url=h?'#'+h:location.pathname+location.search;
+  try{push?history.pushState(null,'',url):history.replaceState(null,'',url)}catch(_){}
+};
+const loadScript=src=>new Promise((ok,no)=>{const s=document.createElement('script');s.src=src;s.onload=ok;s.onerror=()=>no(new Error(src));document.head.appendChild(s)});
+APP.ensure=k=>{
+  if(APP.done[k])return Promise.resolve();
+  if(APP['_p'+k])return APP['_p'+k];
+  const need={sns:DB.loadSns,report:DB.loadReport}[k];
+  return APP['_p'+k]=Promise.resolve(need?need():null).then(()=>{if(APP.init[k])APP.init[k]();APP.done[k]=true}).catch(e=>{APP['_p'+k]=null;throw e});
+};
+APP.nav=(k,sub,push)=>{
+  const was=APP.cur;
+  document.querySelectorAll('.app-sec').forEach(s=>s.hidden=s.id!=='sec-'+k);
+  document.querySelectorAll('.appnav button').forEach(b=>b.dataset.nav===k?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current'));
+  APP.cur=k;
+  if(was!==k)scrollTo(0,0);
+  return APP.ensure(k).then(()=>{
+    if(APP.sec[k]&&APP.sec[k].show&&(sub||was!==k))APP.sec[k].show(sub);
+    APP.setHash(k,sub,push);
+  }).catch(()=>{const sl=document.getElementById(k==='sns'?'sns-loading':'r-body');if(sl)sl.textContent='자료를 불러오지 못했습니다. 화면을 새로 고쳐 주세요.'});
+};
+APP.go=(k,id)=>{document.querySelectorAll('dialog[open]').forEach(d=>d.close());APP.nav(k,null,true).then(()=>{if(APP.sec[k]&&APP.sec[k].open)APP.sec[k].open(id)})};
+APP.filter=(k,sel)=>{document.querySelectorAll('dialog[open]').forEach(d=>d.close());APP.nav(k,null,true).then(()=>{APP.sec[k].filter(sel);APP.setHash(k,null)})};
+document.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]');
+  if(g){e.preventDefault();const [k,id]=g.dataset.go.split(':');APP.go(k,id);return}
+  const n=e.target.closest('[data-nav]');
+  if(n){e.preventDefault();APP.nav(n.dataset.nav,null,true)}
+});
+const route=()=>{
+  const m=/^(cover|promo|sns|report)(?:-(\w+))?$/.exec(location.hash.slice(1));
+  if(m)APP.nav(m[1],m[2]||DEF[m[1]]);else APP.nav('home');
+};
+addEventListener('hashchange',route);
+
+// ---------- 1. 표지 지도 ----------
+APP.init.cover=function(){const R=document.getElementById('sec-cover');
+
+const {books:B,styles:S,labels:L,pubs:P,pubNotes:PN,meta:META,series:SER,criteria:CR}=window.COVER;
+const byId=Object.fromEntries(S.map(s=>[s.id,s]));
+const $=s=>document.querySelector(s), el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const COLORS={'흰색':'#f7f7f5','베이지':'#e8dcc0','노랑':'#f2cf3a','주황':'#f08a2c','분홍':'#f09cb5','빨강':'#d3302c','보라':'#7e57c2','파랑':'#2f6fd6','청록':'#23a6a6','초록':'#3f9a57','갈색':'#7b4f2e','회색':'#9aa0a6','검정':'#1c1c1c'};
+const FACETS=[
+ {k:'style',t:'대표 스타일',f:b=>[b.style],n:v=>byId[v].ko},
+ {k:'pub',t:'출판사',f:b=>[b.pub],n:v=>v},
+ {k:'series',t:'시리즈',f:b=>b.series?[b.series]:[],n:v=>v,limit:16},
+ {k:'catTop',t:'분야',f:b=>[b.catTop],n:v=>v,limit:8},
+ {k:'topic',t:'IT 주제',f:b=>b.topic?[b.topic]:[],n:v=>v,limit:10},
+ {k:'promo',t:'판촉 요소(뱃지·칩)',f:b=>[b.promo],n:v=>L.promo[v]||v},
+ {k:'mood',t:'분위기',f:b=>b.mood,n:v=>L.mood[v]||v},
+ {k:'medium',t:'표현 기법',f:b=>[b.medium],n:v=>L.medium[v]||v},
+ {k:'layout',t:'구도',f:b=>[b.layout],n:v=>L.layout[v]||v},
+ {k:'typeface',t:'제목 글꼴',f:b=>[b.typeface],n:v=>L.typeface[v]||v},
+];
+const state={q:'',qt:[],sort:'date',sel:{},color:new Set()};
+FACETS.forEach(f=>state.sel[f.k]=new Set());
+function match(b,skip){
+  for(const f of FACETS){ if(f.k===skip)continue; const s=state.sel[f.k]; if(s.size&&!f.f(b).some(v=>s.has(v)))return false }
+  if(skip!=='color'&&state.color.size&&!b.colorFam.some(c=>state.color.has(c)))return false;
+  if(state.qt.length&&!state.qt.every(t=>b._f.some(f=>t(f[2]))))return false;
+  return true;
+}
+B.forEach(b=>{b._f=[['제목',b.title],['부제',b.subtitle],['시리즈',b.series],['저자',b.author],['출판사',b.pub],['분야',b.cat.replace(/>/g,' › ')],['표지 메모',b.note],['스타일',byId[b.style].ko],['소재',(b.motif||[]).join(', ')],['기법',L.medium[b.medium]],['구도',L.layout[b.layout]],['글꼴',L.typeface[b.typeface]],['제목 위치',L.title_pos[b.title_pos]],['분위기',(b.mood||[]).map(m=>L.mood[m]).join(', ')],['판촉 요소',L.promo[b.promo]],['색',b.colorFam.join(', ')]].filter(f=>f[1]).map(f=>[f[0],f[1],f[1].toLowerCase()])});
+// 영문·숫자 검색어는 낱말 단위로 맞춘다. 그래야 AI가 Again이나 KAIST 안의 글자에 걸리지 않는다.
+function compileQ(q){return q.toLowerCase().split(/\s+/).filter(Boolean).map(w=>{if(!/^[a-z0-9]+$/.test(w))return t=>t.includes(w);const re=new RegExp('(^|[^a-z0-9])'+w+(w.length<=3?'(?![a-z0-9])':''));return t=>re.test(t)})}
+function why(b){if(!state.qt.length)return '';const seen=new Set();state.qt.forEach(t=>{const f=b._f.find(x=>t(x[2]));if(f)seen.add(f)});const list=[...seen].filter(f=>f[0]!=='제목');return list.length?'<small class="why">'+list.map(f=>esc(f[0])+': '+esc(f[1].length>34?f[1].slice(0,34)+'…':f[1])).join(' / ')+'</small>':''}
+function renderFilters(){
+  const root=$('#c-filters'); root.innerHTML='';
+  FACETS.forEach(f=>{
+    const cnt={}; B.forEach(b=>{if(match(b,f.k))f.f(b).forEach(v=>cnt[v]=(cnt[v]||0)+1)});
+    const all={}; B.forEach(b=>f.f(b).forEach(v=>all[v]=(all[v]||0)+1));
+    let keys=Object.keys(all).sort((a,c)=>all[c]-all[a]);
+    if(f.k==='pub')keys=P;
+    if(f.k==='promo')keys=['heavy','light','none'].filter(k=>all[k]);
+    if(f.limit){const on=[...state.sel[f.k]];keys=keys.slice(0,f.limit);on.forEach(v=>{if(!keys.includes(v))keys.push(v)})}
+    const g=el('div','fgroup','<h3>'+f.t+'</h3>');
+    keys.forEach(v=>{const o=el('button','opt','<span>'+esc(f.n(v))+'</span>'+(f.k==='style'&&byId[v].isNew?'<span class="nw">IT</span>':'')+'<span class="c">'+(cnt[v]||0)+'</span>');
+      const on=state.sel[f.k].has(v); o.setAttribute('aria-pressed',on); if(!cnt[v]&&!on)o.disabled=true;
+      o.onclick=()=>{on?state.sel[f.k].delete(v):state.sel[f.k].add(v);render()}; g.append(o)});
+    root.append(g);
+    if(f.k==='pub'){const c=el('div','fgroup','<h3>주요 색</h3>'),r=el('div','colorrow');
+      Object.entries(COLORS).forEach(([n,h])=>{const o=el('button','colorbtn');o.style.background=h;o.title=n;o.setAttribute('aria-label',n);o.setAttribute('aria-pressed',state.color.has(n));
+        o.onclick=()=>{state.color.has(n)?state.color.delete(n):state.color.add(n);render()};r.append(o)});c.append(r);root.append(c)}
+  });
+}
+function renderChips(){
+  const c=$('#c-chips');c.innerHTML='';let n=0;
+  FACETS.forEach(f=>state.sel[f.k].forEach(v=>{n++;const b=el('button','chip',esc(f.n(v))+' ×');b.onclick=()=>{state.sel[f.k].delete(v);render()};c.append(b)}));
+  state.color.forEach(v=>{n++;const b=el('button','chip',v+' ×');b.onclick=()=>{state.color.delete(v);render()};c.append(b)});
+  if(n){const b=el('button','chip clear','모두 지우기');b.onclick=()=>{resetF();render()};c.append(b)}
+}
+function resetF(){FACETS.forEach(f=>state.sel[f.k].clear());state.color.clear();state.q='';state.qt=[];$('#c-q').value=''}
+const sorts={date:(a,b)=>b.date.localeCompare(a.date),bright:(a,b)=>b.bright-a.bright,dark:(a,b)=>a.bright-b.bright,sat:(a,b)=>b.sat-a.sat,pub:(a,b)=>P.indexOf(a.pub)-P.indexOf(b.pub)||b.date.localeCompare(a.date)};
+function render(){
+  const list=B.filter(b=>match(b)).sort(sorts[state.sort]);
+  $('#c-count').textContent=list.length+'종';
+  const g=$('#c-grid');g.innerHTML='';
+  const fr=document.createDocumentFragment();
+  list.forEach(b=>{const c=el('button','card');
+    c.innerHTML='<div class="ph">'+CV(b.id,'fit',b.title)+'</div><b>'+esc(b.title)+'</b><small>'+esc(b.pub)+' · '+esc(byId[b.style].ko)+'</small>'+why(b);
+    c.onclick=()=>detail(b);fr.append(c)});
+  g.append(fr); $('#c-empty').hidden=list.length>0;
+  renderFilters();renderChips();
+}
+function goFilter(sel){resetF();Object.entries(sel).forEach(([k,v])=>state.sel[k].add(v));show('browse');render()}
+function detail(b){
+  const s=byId[b.style], d=$('#c-dlg');
+  const sim=B.filter(x=>x!==b&&x.style===b.style).map(x=>[x,(x.mood||[]).filter(m=>b.mood.includes(m)).length+(x.medium===b.medium?1:0)+(x.layout===b.layout?1:0)+(x.pub!==b.pub?.5:0)+x.colorFam.filter(c=>b.colorFam.includes(c)).length*.5]).sort((p,q)=>q[1]-p[1]).slice(0,5).map(x=>x[0]);
+  const prompt='book-cover-style 스킬의 IT 묶음으로 "'+s.ko+'" 스타일 표지 시안을 만들어 주세요. 제목: (제목) / 저자: (저자) / 내용: (책 소개)';
+  d.innerHTML='<div class="det"><button class="xbtn" aria-label="닫기">×</button><div>'+CV(b.id,'big',b.title)+'</div><div>'+
+   '<h2>'+esc(b.title)+'</h2><p class="sub">'+esc(b.subtitle||'')+'</p>'+
+   '<p class="note">'+esc(b.note)+'</p>'+
+   '<dl class="kv"><dt>출판사</dt><dd>'+esc(b.pub)+'</dd>'+(b.series?'<dt>시리즈</dt><dd><b>'+esc(b.series)+'</b></dd>':'')+'<dt>저자</dt><dd>'+esc(b.author)+'</dd><dt>출간일</dt><dd>'+esc(b.date)+(b.pages?' · '+esc(b.pages):'')+(b.size?' · '+esc(b.size):'')+'</dd><dt>분야</dt><dd>'+esc(b.cat.replace(/>/g,' › '))+'</dd>'+
+   '<dt>스타일</dt><dd><b>'+esc(s.ko)+'</b>'+(s.isNew?' <span class="tagnew">IT서 추가</span>':'')+'</dd><dt>기법</dt><dd>'+esc(L.medium[b.medium])+' · '+esc(L.layout[b.layout])+'</dd><dt>제목</dt><dd>'+esc(L.typeface[b.typeface])+' · '+esc(L.title_pos[b.title_pos])+'</dd><dt>판촉 요소</dt><dd>'+esc(L.promo[b.promo])+'</dd><dt>분위기</dt><dd>'+b.mood.map(m=>esc(L.mood[m])).join(', ')+'</dd><dt>소재</dt><dd>'+esc((b.motif||[]).join(', '))+'</dd></dl>'+
+   '<div class="pal">'+b.palette.map(p=>'<i style="background:'+p.hex+';flex:'+p.pct+'" title="'+p.hex+'"></i>').join('')+'</div>'+
+   '<div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId='+b.id+'">알라딘에서 보기</a><button class="btn ghost" id="cp">시안 요청 문장 복사</button><button class="btn ghost" id="fs">같은 스타일 모두 보기</button>'+(b.series?'<button class="btn ghost" id="fser">같은 시리즈 보기</button>':'')+'</div>'+
+   APP.xl(b.id,'cover')+'<h4 class="sh">비슷한 표지</h4><div class="sim">'+sim.map((x,i)=>'<button data-i="'+i+'">'+CV(x.id,'',x.title)+'</button>').join('')+'</div></div></div>';
+  d.querySelector('.xbtn').onclick=()=>d.close();
+  d.querySelectorAll('.sim button').forEach(x=>x.onclick=()=>detail(sim[+x.dataset.i]));
+  d.querySelector('#fs').onclick=()=>{d.close();goFilter({style:b.style})};
+  const fser=d.querySelector('#fser'); if(fser)fser.onclick=()=>{d.close();goFilter({series:b.series})};
+  d.querySelector('#cp').onclick=e=>{const done=()=>e.target.textContent='복사했습니다',fail=()=>e.target.textContent=prompt;try{navigator.clipboard.writeText(prompt).then(done).catch(fail)}catch(_){fail()}};
+  if(!d.open)d.showModal();
+}
+$('#c-dlg').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
+function renderDict(){
+  const r=$('#c-dict'); const nNew=S.filter(s=>s.isNew).length;
+  r.innerHTML='<p class="intro">표지 '+B.length+'종을 첫인상을 지배하는 요소로 나눈 '+S.length+'가지 스타일입니다. 일반 단행본 표지 지도의 14개 스타일을 기본으로 쓰고, IT서에서만 두드러지는 '+nNew+'개를 더했습니다. 이번 표지에 한 번도 나오지 않은 스타일은 뺐습니다. 많이 쓰인 순서로 놓았고, 표지를 누르면 상세 정보가 열립니다.</p>';
+  [...S].sort((a,b)=>b.count-a.count).forEach(s=>{
+    const list=B.filter(b=>b.style===s.id), c=el('article','style');
+    const pc={},cc={}; list.forEach(b=>{pc[b.pub]=(pc[b.pub]||0)+1;const k=b.topic||b.catTop;cc[k]=(cc[k]||0)+1});
+    const pubs=Object.entries(pc).sort((a,b)=>b[1]-a[1]).slice(0,5), mx=pubs[0]?pubs[0][1]:1;
+    const pick=[...list].sort((a,b)=>(b.sp-a.sp)).filter((b,i,a)=>!b.series||a.findIndex(x=>x.series===b.series)===i);
+    const seen={},sam=[];pick.forEach(b=>{if(sam.length<6&&(seen[b.pub]||0)<2){seen[b.pub]=(seen[b.pub]||0)+1;sam.push(b)}});[...pick,...list].forEach(b=>{if(sam.length<6&&!sam.includes(b))sam.push(b)});
+    c.innerHTML='<div><h2>'+esc(s.ko)+(s.isNew?'<span class="tagnew">IT서 추가</span>':'')+'</h2><div class="n">'+s.count+'종 · 전체의 '+Math.round(s.count/B.length*100)+'%</div><p>'+esc(s.desc)+'</p>'+(s.why?'<p class="why">추가한 근거: '+esc(s.why)+'</p>':'')+
+      '<div class="tags">'+Object.entries(cc).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>'<span>'+esc(x[0])+' '+x[1]+'</span>').join('')+'</div>'+
+      pubs.map(([p,n])=>'<div class="mini"><span>'+esc(p)+'</span><div class="tr"><i style="width:'+n/mx*100+'%"></i></div><span class="v">'+n+'</span></div>').join('')+
+      '<div class="acts"><button class="btn ghost">이 스타일 표지 '+s.count+'종 보기</button></div></div>'+
+      '<div class="samples">'+sam.map((b,i)=>'<button data-i="'+i+'">'+CV(b.id,'',b.title)+'</button>').join('')+'</div>';
+    c.querySelectorAll('.samples button').forEach(x=>x.onclick=()=>detail(sam[+x.dataset.i]));
+    c.querySelector('.btn').onclick=()=>goFilter({style:s.id});
+    r.append(c);
+  });
+}
+function renderComp(){
+  const r=$('#c-comp'); const order=[...S].sort((a,b)=>b.count-a.count);
+  const pct=(p,s)=>{const t=B.filter(b=>b.pub===p).length;return Math.round(B.filter(b=>b.pub===p&&b.style===s).length/t*100)};
+  const lv=v=>v===0?0:v<5?1:v<10?2:v<20?3:v<35?4:5;
+  let h='<h2 class="sec">출판사 × 스타일</h2><p class="intro">각 칸은 그 출판사 표지 가운데 해당 스타일이 차지하는 비율(%)입니다. 칸을 누르면 그 표지만 모아 봅니다. 주황색 이름은 IT서용으로 추가한 스타일입니다.</p><div class="tblwrap"><table class="heat"><thead><tr><th></th>'+order.map(s=>'<th'+(s.isNew?' class="nw"':'')+'><span>'+esc(s.ko)+'</span></th>').join('')+'</tr></thead><tbody>';
+  P.forEach(p=>{h+='<tr><th scope="row">'+esc(p)+'</th>'+order.map(s=>{const v=pct(p,s.id),l=lv(v);return '<td style="background:var(--heat'+l+');color:'+(l>=4?'var(--bg)':'var(--ink)')+'"><button data-p="'+esc(p)+'" data-s="'+s.id+'" data-t="'+esc(p)+' · '+esc(s.ko)+': '+v+'%">'+(v||'')+'</button></td>'}).join('')+'</tr>'});
+  h+='</tbody></table></div><div class="legend"><span>0%</span>'+[0,1,2,3,4,5].map(i=>'<i style="background:var(--heat'+i+')"></i>').join('')+'<span>35% 이상</span></div><div class="pubs">';
+  P.forEach(p=>{const L2=B.filter(b=>b.pub===p);
+    const top=Object.entries(L2.reduce((a,b)=>(a[b.style]=(a[b.style]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const ms=(k)=>(L2.reduce((a,b)=>a+b[k],0)/L2.length*100).toFixed(0);
+    const hue=x=>{const c=parseInt(x.slice(1),16),R=c>>16,G=c>>8&255,Bl=c&255,mx=Math.max(R,G,Bl),mn=Math.min(R,G,Bl);if(mx-mn<24)return 400+mx/255*100;let hh=mx===R?(G-Bl)/(mx-mn):mx===G?2+(Bl-R)/(mx-mn):4+(R-G)/(mx-mn);return (hh*60+360)%360};
+    const cols=L2.map(b=>b.palette[0].hex).sort((a,c)=>hue(a)-hue(c));
+    const nIT=L2.filter(b=>b.isIT).length, nSer=L2.filter(b=>b.series).length, nHeavy=L2.filter(b=>b.promo==='heavy').length;
+    h+='<div class="pub"><h3>'+esc(p)+'</h3><div class="meta">'+L2.length+'종 · IT 분야 '+nIT+'종 · 시리즈 '+nSer+'종 · 판촉 요소 많음 '+Math.round(nHeavy/L2.length*100)+'%<br>평균 밝기 '+ms('bright')+' · 평균 채도 '+ms('sat')+'</div><div class="strip" title="표지마다 가장 넓은 색 한 가지를 색상 순으로 늘어놓았습니다">'+cols.map(c=>'<i style="background:'+c+'"></i>').join('')+'</div><div class="tags">'+top.map(t=>'<span>'+esc(byId[t[0]].ko)+' '+t[1]+'</span>').join('')+'</div><p>'+esc(PN[p]||'')+'</p></div>'});
+  h+='</div><h2 class="sec">출판사별 시리즈</h2><p class="intro">표지나 서지 정보에 시리즈 이름이 있고 두 권 이상 나온 것만 모았습니다. 줄을 누르면 그 시리즈 표지만 봅니다.</p><div class="pubs">';
+  P.forEach(p=>{const list=SER.filter(s=>s.pub===p);
+    h+='<div class="pub"><h3>'+esc(p)+'</h3><div class="meta">시리즈 '+list.length+'개 · '+list.reduce((a,s)=>a+s.count,0)+'종</div>'+(list.length?list.map(s=>'<button class="serrow" data-ser="'+esc(s.name)+'" data-p="'+esc(p)+'"><div><b>'+esc(s.name)+'</b><span>'+s.count+'종 · '+esc(s.styles)+'</span></div><div class="th">'+s.ids.slice(0,4).map(i=>CV(i,'h54')).join('')+'</div></button>').join(''):'<p>두 권 이상 나온 시리즈가 없습니다.</p>')+'</div>'});
+  h+='</div><h2 class="sec">수집·제외 기준</h2><ul class="rules">'+CR.rules.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><div class="tblwrap"><table class="crit"><thead><tr><th>출판사</th><th class="num">2026년 후보</th><th class="num">세트</th><th class="num">큰글자판</th><th class="num">비도서</th><th class="num">시나공</th><th class="num">100종 밖</th><th class="num">수록</th><th>수록 범위</th></tr></thead><tbody>'+
+    CR.table.map(t=>'<tr><td>'+esc(t.pub)+'</td><td class="num">'+t.cand+'</td><td class="num">'+t.set+'</td><td class="num">'+t.large+'</td><td class="num">'+t.nonbook+'</td><td class="num">'+t.sinagong+'</td><td class="num">'+t.over+'</td><td class="num"><b>'+t.kept+'</b></td><td>'+esc(t.range)+'</td></tr>').join('')+'</tbody></table></div>';
+  r.innerHTML=h;
+  const tip=$('#c-tip');
+  r.querySelectorAll('td button').forEach(b=>{
+    b.onmousemove=e=>{tip.hidden=false;tip.textContent=b.dataset.t;tip.style.left=Math.min(e.clientX+12,innerWidth-250)+'px';tip.style.top=e.clientY+14+'px'};
+    b.onmouseleave=()=>tip.hidden=true;
+    b.onclick=()=>{tip.hidden=true;goFilter({pub:b.dataset.p,style:b.dataset.s})}});
+  r.querySelectorAll('.serrow').forEach(b=>b.onclick=()=>goFilter({pub:b.dataset.p,series:b.dataset.ser}));
+}
+const VIEWS=['browse','dict','comp'];
+function show(v,keep){R.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='c-'+v);R.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===v));scrollTo(0,0);if(!keep)APP.setHash('cover',v)}
+R.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>show(b.dataset.v));
+$('#c-q').oninput=e=>{state.q=e.target.value.trim();state.qt=compileQ(state.q);render()};
+$('#c-sort').onchange=e=>{state.sort=e.target.value;render()};
+$('#c-sum').textContent=B.length+'종 · 출판사 '+P.length+'곳 · '+META.range;
+$('#c-src').textContent=META.source;
+renderDict();renderComp();render();
+APP.sec.cover={show:(v)=>show(v||'browse',true),open:id=>{const b=B.find(x=>x.id===id);if(b)detail(b)},filter:goFilter};
+if(matchMedia('(max-width:820px)').matches)$('#c-fd').open=false;
+
+
+// 내려받기
+(async()=>{
+  const dl=await APP.downloads(); if(!dl)return;
+  const box=$('#c-dl'),msg=$('#c-dlMsg'),bz=$('#c-dlZip'),bc=$('#c-dlCsv');
+  box.hidden=false;
+  const say=t=>{msg.textContent=t};
+  const q=v=>{v=v==null?'':String(v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+  const csv=rows=>'﻿'+rows.map(r=>r.map(q).join(',')).join('\r\n');
+  function booksCSV(){
+    const rows=[['출판사','도서명','부제','시리즈','저자','출간일','분야','IT 분야 여부','쪽수','판형','ISBN','대표 스타일','IT서 추가 스타일','구도','표현 기법','제목 글꼴','제목 위치','분위기','판촉 요소','소재','주요 색','평균 밝기','평균 채도','표지 메모','알라딘 링크','표지 파일']];
+    [...B].sort(sorts.pub).forEach(b=>rows.push([b.pub,b.title,b.subtitle,b.series,b.author,b.date,b.cat,b.isIT?'예':'아니오',b.pages,b.size,b.isbn,byId[b.style].ko,byId[b.style].isNew?'예':'',L.layout[b.layout],L.medium[b.medium],L.typeface[b.typeface],L.title_pos[b.title_pos],b.mood.map(m=>L.mood[m]).join(' / '),L.promo[b.promo],(b.motif||[]).join(' / '),b.colorFam.join(' / '),b.bright,b.sat,b.note,'https://www.aladin.co.kr/shop/wproduct.aspx?ItemId='+b.id,'covers/'+b.id+'.jpg']));
+    return csv(rows);
+  }
+  function stylesCSV(){
+    const rows=[['스타일 코드','스타일','IT서 추가','표지 수','설명','어울리는 책',...P]];
+    [...S].sort((a,b)=>b.count-a.count).forEach(s=>rows.push([s.id,s.ko,s.isNew?'예':'',s.count,s.desc,s.best_for,...P.map(p=>B.filter(b=>b.pub===p&&b.style===s.id).length)]));
+    return csv(rows);
+  }
+  async function save(name,data){
+    try{await dl.save({filename:name,data});say('')}
+    catch(e){const c=e&&e.code;
+      if(c==='declined')say('');
+      else if(c==='rate_limited')say('저장 창이 이미 열려 있습니다. 잠시 뒤 다시 눌러 주세요.');
+      else say('이 화면에서는 내려받을 수 없습니다.')}
+  }
+  let zipLib=null;
+  const loadZip=()=>zipLib||(zipLib=new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';s.onload=()=>ok(window.JSZip);s.onerror=()=>{zipLib=null;no(new Error('zip'))};document.head.appendChild(s)}));
+  const get=async(u,kind)=>{const r=await fetch(MEDIA(u));if(!r.ok)throw new Error(u);return kind==='t'?r.text():r.arrayBuffer()};
+  bc.onclick=()=>save('표지지도2026_IT출판사_도서목록.csv',booksCSV());
+  bz.onclick=async()=>{
+    bz.disabled=bc.disabled=true;
+    try{
+      say('압축 도구를 불러오는 중…');
+      const JSZip=await loadZip(); const z=new JSZip(); const f=z.folder('표지지도2026_IT출판사');
+      f.file('작업자료/분류표.md',await get('files/cover-classification.md','t'));
+      f.file('작업자료/수집_제외기준.md',await get('files/cover-collection.md','t'));
+      f.file('작업자료/표지분석데이터.json',await get('files/cover-data.json','t'));
+      f.file('도서목록.csv',booksCSV());
+      f.file('스타일집계.csv',stylesCSV());
+      f.file('읽어보기.txt','표지 지도 2026 (IT 출판사)\r\n\r\n1. 압축을 풉니다.\r\n2. 도서목록.csv와 스타일집계.csv는 엑셀에서 열립니다.\r\n3. 작업자료 폴더에는 분류 기준, 수집·제외 기준, 분석 데이터 원본이 있습니다.\r\n\r\n'+META.source+'\r\n');
+      say('압축하는 중…');
+      const blob=await z.generateAsync({type:'blob',compression:'STORE'});
+      say(''); await save('표지지도2026_IT출판사_분석자료.zip',blob);
+    }catch(e){say('파일을 모으지 못했습니다. 잠시 뒤 다시 눌러 주세요.')}
+    finally{bz.disabled=bc.disabled=false}
+  };
+})();
+
+};
+// ---------- 2. 상세페이지 지도 ----------
+APP.init.promo=function(){const R=document.getElementById('sec-promo');
+
+const D=window.PROMO, I=D.imgs, BK=D.books, L=D.labels, P=D.pubs, NEW=new Set(L.partsNew);
+const IMG=f=>MEDIA('promo/'+f), SHEET=n=>MEDIA('sheets/thumb_'+String(n).padStart(2,'0')+'.jpg'), CSHEET=n=>MEDIA('sheets/cover_'+String(n).padStart(2,'0')+'.jpg');
+const $=s=>document.querySelector(s), el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LEN=[['~3화면',0,3],['3~5화면',3,5],['5~8화면',5,8],['8화면 이상',8,1e9]];
+const lenBin=x=>LEN.find(b=>x.screens>=b[1]&&x.screens<b[2])[0];
+const itTag='<span class="nw">IT</span>';
+const partName=(k,tag)=>esc(L.parts[k])+(tag&&NEW.has(k)?' '+itTag:'');
+const PK=Object.keys(L.parts);
+const FACETS=[
+ {k:'pub',t:'출판사',f:x=>[x.pub],n:v=>esc(v),order:P},
+ {k:'first',t:'첫 화면 유형',f:x=>[x.first],n:v=>esc(L.first[v])},
+ {k:'parts',t:'구성 요소',f:x=>x.parts,n:v=>partName(v,true),all:true,order:PK},
+ {k:'tone',t:'톤',f:x=>[x.tone],n:v=>esc(L.tone[v])},
+ {k:'len',t:'길이',f:x=>[lenBin(x)],n:v=>esc(v),order:LEN.map(b=>b[0])},
+ {k:'topic',t:'분야',f:x=>[x.topic],n:v=>esc(v),limit:12},
+ {k:'cstyle',t:'표지 스타일(표지 지도 기준)',f:x=>[x.cstyle],n:v=>esc(L.cstyle[v]||v)},
+];
+const state={qt:[],q:'',sort:'date',sel:{}};FACETS.forEach(f=>state.sel[f.k]=new Set());
+I.forEach(x=>{const b=BK[x.books[0]];x.title=b.title;x.date=b.date;x.topic=b.topic||b.catTop;x.cstyle=b.style;
+  x._f=[['제목',x.books.map(id=>BK[id].title).join(' / ')],['부제',b.subtitle],['시리즈',b.series],['저자',b.author],['분야',b.cat.replace(/>/g,' › ')],['헤드카피',x.copy],['분석 메모',x.note],['구성',x.parts.map(p=>L.parts[p]).join(', ')],['첫 화면',L.first[x.first]],['톤',L.tone[x.tone]],['출판사',x.pub]].filter(f=>f[1]).map(f=>[f[0],f[1],f[1].toLowerCase()])});
+function compileQ(q){return q.toLowerCase().split(/\s+/).filter(Boolean).map(w=>{if(!/^[a-z0-9]+$/.test(w))return t=>t.includes(w);const re=new RegExp('(^|[^a-z0-9])'+w+(w.length<=3?'(?![a-z0-9])':''));return t=>re.test(t)})}
+function match(x,skip){
+  for(const f of FACETS){if(f.k===skip)continue;const s=state.sel[f.k];if(!s.size)continue;const v=f.f(x);if(f.all?![...s].every(a=>v.includes(a)):!v.some(a=>s.has(a)))return false}
+  if(state.qt.length&&!state.qt.every(t=>x._f.some(f=>t(f[2]))))return false;return true}
+function why(x){if(!state.qt.length)return '';const s=new Set();state.qt.forEach(t=>{const f=x._f.find(y=>t(y[2]));if(f)s.add(f)});const l=[...s].filter(f=>f[0]!=='제목'&&f[0]!=='헤드카피');return l.length?'<small class="why">'+l.map(f=>esc(f[0])+': '+esc(f[1].length>30?f[1].slice(0,30)+'…':f[1])).join(' / ')+'</small>':''}
+function resetF(){FACETS.forEach(f=>state.sel[f.k].clear());state.q='';state.qt=[];$('#p-q').value=''}
+// 첫 화면 그림은 16장씩 한 장에 모아 두었다. 화면에 들어올 때 불러온다
+const thumb=x=>{const k=x.ti%16;return '<i class="th" data-s="'+(Math.floor(x.ti/16)+1)+'" style="background-position:'+(k%4)/3*100+'% '+Math.floor(k/4)/3*100+'%"></i>'};
+const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.backgroundImage='url('+SHEET(e.target.dataset.s)+')';io.unobserve(e.target)}}),{rootMargin:'700px'}):null;
+const lazy=root=>root.querySelectorAll('.th').forEach((t,i)=>io&&i>=24?io.observe(t):t.style.backgroundImage='url('+SHEET(t.dataset.s)+')');
+function renderFilters(){const root=$('#p-filters');root.innerHTML='';
+  FACETS.forEach(f=>{const cnt={},all={};I.forEach(x=>{f.f(x).forEach(v=>all[v]=(all[v]||0)+1);if(match(x,f.k))f.f(x).forEach(v=>cnt[v]=(cnt[v]||0)+1)});
+    let keys=(f.order||Object.keys(all).sort((a,b)=>all[b]-all[a])).filter(v=>all[v]);if(f.limit)keys=keys.slice(0,f.limit);
+    const g=el('div','fgroup','<h3>'+f.t+(f.all?' (모두 포함)':'')+'</h3>');
+    keys.forEach(v=>{const on=state.sel[f.k].has(v),o=el('button','opt','<span>'+f.n(v)+'</span><span class="c">'+(cnt[v]||0)+'</span>');o.setAttribute('aria-pressed',on);if(!cnt[v]&&!on)o.disabled=true;o.onclick=()=>{on?state.sel[f.k].delete(v):state.sel[f.k].add(v);render()};g.append(o)});root.append(g)})}
+function renderChips(){const c=$('#p-chips');c.innerHTML='';let n=0;
+  FACETS.forEach(f=>state.sel[f.k].forEach(v=>{n++;const b=el('button','chip',f.n(v).replace(itTag,'')+' ×');b.onclick=()=>{state.sel[f.k].delete(v);render()};c.append(b)}));
+  if(n){const b=el('button','chip clear','모두 지우기');b.onclick=()=>{FACETS.forEach(f=>state.sel[f.k].clear());render()};c.append(b)}}
+const sorts={date:(a,b)=>b.date.localeCompare(a.date),long:(a,b)=>b.screens-a.screens,short:(a,b)=>a.screens-b.screens,sec:(a,b)=>b.sections-a.sections,pub:(a,b)=>P.indexOf(a.pub)-P.indexOf(b.pub)||b.date.localeCompare(a.date)};
+function render(){const list=I.filter(x=>match(x)).sort(sorts[state.sort]);$('#p-count').textContent=list.length+'장';
+  const g=$('#p-grid');g.innerHTML='';const fr=document.createDocumentFragment();
+  list.forEach(x=>{const c=el('button','card');
+    c.innerHTML='<div class="ph" role="img" aria-label="'+esc(x.title)+' 상세페이지 첫 화면">'+thumb(x)+'<span class="len">'+x.screens.toFixed(1)+'화면</span></div><b>'+esc(x.title)+'</b><small>'+esc(x.pub)+' · '+esc(L.first[x.first])+'</small>'+(x.copy?'<q>'+esc(x.copy)+'</q>':'')+why(x);
+    c.onclick=()=>detail(x);fr.append(c)});
+  g.append(fr);lazy(g);$('#p-empty').hidden=list.length>0;renderFilters();renderChips()}
+function detail(x){const d=$('#p-dlg'),b=BK[x.books[0]],cv=b.cv;
+  d.innerHTML='<div class="det"><button class="xbtn" aria-label="닫기">×</button><div class="long"><img src="'+IMG(x.file)+'" width="'+x.pw+'" height="'+x.ph+'" alt="'+esc(x.title)+' 상세페이지 전체"></div><div class="side">'+
+   '<h2>'+esc(b.title)+'</h2><p class="sub">'+esc(b.author)+' · '+esc(x.pub)+' · '+esc(b.date)+'</p>'+
+   '<div class="cover">'+CV(b.id,'w84',b.title)+'<small style="color:var(--ink3)">표지 스타일<br><b style="color:var(--ink)">'+esc(L.cstyle[b.style]||'')+'</b></small></div>'+
+   (x.copy?'<blockquote>'+esc(x.copy)+'</blockquote>':'')+
+   '<dl class="kv"><dt>첫 화면</dt><dd>'+esc(L.first[x.first])+'</dd><dt>톤</dt><dd>'+esc(L.tone[x.tone])+'</dd><dt>길이</dt><dd>휴대폰 '+x.screens.toFixed(1)+'화면 · 구획 '+x.sections+'개</dd><dt>원본</dt><dd>'+x.w+'×'+x.h+'px</dd><dt>분야</dt><dd>'+esc(b.cat.replace(/>/g,' › '))+'</dd></dl>'+
+   '<div class="tags">'+PK.filter(p=>x.parts.includes(p)).map(p=>'<span'+(NEW.has(p)?' class="it"':'')+'>'+esc(L.parts[p])+'</span>').join('')+'</div>'+
+   '<p style="margin:10px 0 0">'+esc(x.note)+'</p>'+
+   (x.via?'<p class="also">'+esc(x.via)+'</p>':'')+
+   '<div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId='+b.id+'">알라딘에서 보기</a><button class="btn ghost" id="fs">같은 첫 화면 유형 보기</button></div>'+APP.xl(b.id,'promo')+'</div></div>';
+  d.querySelector('.xbtn').onclick=()=>d.close();
+  d.querySelector('#fs').onclick=()=>{d.close();resetF();state.sel.first.add(x.first);show('browse');render()};
+  if(!d.open)d.showModal();d.querySelector('.long').scrollTop=0;d.querySelector('.det').scrollTop=0}
+$('#p-dlg').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
+const heatCls=v=>v===0?0:v<10?1:v<25?2:v<45?3:v<65?4:5;
+const pct=(p,f)=>{const a=p?I.filter(x=>x.pub===p):I;return a.length?Math.round(a.filter(f).length/a.length*100):0};
+// 행은 분류 항목, 열은 출판사. 마지막 열은 전체 평균
+function heatTable(keys,test,name){let h='<div class="tblwrap"><table class="heat"><thead><tr><th></th>'+P.map(p=>'<th>'+esc(p)+'</th>').join('')+'<th>전체</th></tr></thead><tbody>';
+  keys.forEach(k=>{h+='<tr><th scope="row">'+name(k)+'</th>'+P.concat(['']).map(p=>{const v=pct(p,x=>test(x,k)),l=heatCls(v);return '<td'+(p?'':' class="all"')+' style="background:var(--heat'+l+');color:'+(l>=4?'var(--bg)':'var(--ink)')+'"><button data-p="'+esc(p)+'" data-k="'+esc(k)+'" data-t="'+esc(p||'전체')+' · '+name(k).replace(/<[^>]+>/g,'').trim()+': '+v+'%">'+(v||'')+'</button></td>'}).join('')+'</tr>'});
+  return h+'</tbody></table></div><div class="legend"><span>0%</span>'+[0,1,2,3,4,5].map(i=>'<i style="background:var(--heat'+i+')"></i>').join('')+'<span>65% 이상</span></div>'}
+function wireHeat(root,onClick){const tip=$('#p-tip');root.querySelectorAll('td button').forEach(b=>{b.onmousemove=e=>{tip.hidden=false;tip.textContent=b.dataset.t;tip.style.left=Math.min(e.clientX+12,innerWidth-250)+'px';tip.style.top=e.clientY+14+'px'};b.onmouseleave=()=>tip.hidden=true;b.onclick=()=>{tip.hidden=true;onClick(b.dataset.p,b.dataset.k)}})}
+function partBars(keys,pc,tot,mx){let h='<div class="cov">';
+  keys.forEach(k=>{const n=pc[k]||0,r=D.ref&&D.ref.parts[k];h+='<span class="nm"><span>'+esc(L.parts[k])+'</span>'+(NEW.has(k)?itTag:'')+'</span><button class="tr'+(NEW.has(k)?' it':'')+'" data-p="'+k+'" aria-label="'+esc(L.parts[k])+' 보기"><i style="width:'+n/mx*100+'%"></i></button><span class="v">'+n+'장 · '+Math.round(n/tot*100)+'%'+(r!=null?'<em>일반서 '+r+'%</em>':'')+'</span>'});
+  return h+'</div>'}
+function renderParts(){const r=$('#p-parts');const tot=I.length;
+  const pc={};I.forEach(x=>x.parts.forEach(p=>pc[p]=(pc[p]||0)+1));const by=(a,b)=>(pc[b]||0)-(pc[a]||0);const mx=Math.max(...Object.values(pc));
+  const oldK=PK.filter(k=>!NEW.has(k)).sort(by), newK=PK.filter(k=>NEW.has(k)).sort(by);
+  let h='<p class="intro">상세페이지 '+tot+'장을 첫 화면 유형과 구성 요소로 나눴습니다. 구성 요소는 한 장에 여러 개가 들어갑니다. 막대를 누르면 그 요소가 들어간 상세페이지만 모아 봅니다.</p>'+
+    '<h2 class="sec">IT서에 많은 구획</h2><p class="secnote">일반 출판사판 분류에는 없던 항목입니다. IT 출판사 상세페이지를 보고 더했습니다.</p>'+partBars(newK,pc,tot,mx)+
+    '<h2 class="sec">어떤 구획을 넣는가</h2><p class="secnote">일반 출판사판과 같은 항목입니다. 오른쪽 작은 숫자는 문학동네 등 일반 출판사 6곳의 상세페이지 '+(D.ref?D.ref.n:'')+'장에서 같은 요소가 나온 비율입니다. 일반 출판사판의 질문형 카피에는 추천 대상 안내가 들어 있어 그대로 비교하기 어렵습니다.</p>'+partBars(oldK,pc,tot,mx)+
+    '<h2 class="sec">첫 화면을 무엇으로 여는가</h2><div class="firsts">';
+  Object.keys(L.first).forEach(k=>{const list=I.filter(x=>x.first===k);if(!list.length)return;const sam=[...list].sort((a,b)=>b.date.localeCompare(a.date)).filter((x,i,a)=>a.findIndex(y=>y.pub===x.pub)===i).concat(list).filter((x,i,a)=>a.indexOf(x)===i).slice(0,4);
+    h+='<div><h3>'+esc(L.first[k])+'</h3><div class="n">'+list.length+'장 · '+Math.round(list.length/tot*100)+'%'+(D.ref&&D.ref.first[k]!=null?' · 일반서 '+D.ref.first[k]+'%':'')+'</div><p>'+esc(L.firstDesc[k])+'</p><div class="samples">'+sam.map(x=>'<button data-f="'+x.file+'" aria-label="'+esc(x.title)+'">'+thumb(x)+'</button>').join('')+'</div></div>'});
+  r.innerHTML=h+'</div>';lazy(r);
+  r.querySelectorAll('.cov button').forEach(b=>b.onclick=()=>{resetF();state.sel.parts.add(b.dataset.p);show('browse');render()});
+  r.querySelectorAll('.samples button').forEach(b=>b.onclick=()=>detail(I.find(x=>x.file===b.dataset.f)))}
+function renderComp(){const r=$('#p-comp');
+  let h='<p class="intro">출판사별로 상세페이지를 얼마나 붙였는지, 어떤 구획을 즐겨 쓰는지 비교합니다. 칸을 누르면 그 상세페이지만 모아 봅니다.</p><h2 class="sec">상세페이지를 붙인 도서 비율</h2><div class="cov">';
+  P.forEach(p=>{const c=D.coverage[p];h+='<span class="nm">'+esc(p)+'</span><span class="tr"><i style="width:'+c.with/c.total*100+'%"></i></span><span class="v">'+c.with+' / '+c.total+'종</span>'});
+  h+='</div><h2 class="sec">구성 요소 사용 비율 (%)</h2><p class="secnote">출판사마다 상세페이지 가운데 그 요소가 들어간 비율입니다.</p>';
+  const byAll=k=>I.filter(x=>x.parts.includes(k)).length;
+  h+=heatTable([...PK].sort((a,b)=>byAll(b)-byAll(a)),(x,k)=>x.parts.includes(k),k=>partName(k,true));
+  h+='<h2 class="sec">첫 화면 유형 비율 (%)</h2>'+heatTable(Object.keys(L.first),(x,k)=>x.first===k,k=>esc(L.first[k]));
+  h+='<h2 class="sec">톤 비율 (%)</h2>'+heatTable(Object.keys(L.tone),(x,k)=>x.tone===k,k=>esc(L.tone[k]));
+  h+='<h2 class="sec">평균 길이와 구획 수</h2><div class="cov">';const avg=(p,f)=>{const a=I.filter(x=>x.pub===p);return a.length?a.reduce((s,x)=>s+f(x),0)/a.length:0};const ml=Math.max(...P.map(p=>avg(p,x=>x.screens)));
+  P.forEach(p=>{const v=avg(p,x=>x.screens);h+='<span class="nm">'+esc(p)+'</span><span class="tr"><i style="width:'+v/ml*100+'%"></i></span><span class="v">'+v.toFixed(1)+'화면 · 구획 '+avg(p,x=>x.sections).toFixed(1)+'개</span>'});
+  h+='</div>';
+  if(D.missing.length){h+='<h2 class="sec">상세페이지 이미지가 없는 도서 '+D.missing.length+'종</h2><p class="secnote">두 번 조회하고 이미지 서버도 따로 확인했습니다.</p><ul class="miss">'+D.missing.map(m=>'<li><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId='+m.id+'" target="_blank" rel="noopener" style="color:var(--accent)">'+esc(m.title)+'</a> <small>'+esc(m.pub)+' · '+esc(m.date)+' · '+esc(m.reason)+'</small></li>').join('')+'</ul>'}
+  r.innerHTML=h;
+  const tables=r.querySelectorAll('.tblwrap');const keysets=['parts','first','tone'];
+  tables.forEach((t,i)=>wireHeat(t,(p,k)=>{resetF();if(p)state.sel.pub.add(p);state.sel[keysets[i]].add(k);show('browse');render()}))}
+const VIEWS=['browse','parts','comp'];
+function show(v,keep){R.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='p-'+v);R.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===v));scrollTo(0,0);if(!keep)APP.setHash('promo',v)}
+R.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>show(b.dataset.v));
+$('#p-q').oninput=e=>{state.q=e.target.value.trim();state.qt=compileQ(state.q);render()};
+$('#p-sort').onchange=e=>{state.sort=e.target.value;render()};
+$('#p-sum').textContent='상세페이지 '+I.length+'장 · 조사 대상 '+D.meta.total+'종 · 출판사 '+P.length+'곳';
+$('#p-src').textContent=D.meta.source;
+renderParts();renderComp();render();
+APP.sec.promo={show:(v)=>show(v||'browse',true),open:id=>{const x=I.find(y=>y.books.includes(id));if(x)detail(x)},filter:sel=>{resetF();Object.entries(sel).forEach(([k,v])=>state.sel[k].add(v));show('browse');render()}};
+if(matchMedia('(max-width:820px)').matches)$('#p-fd').open=false;
+
+
+// 내려받기
+(async()=>{
+  const dl=await APP.downloads(); if(!dl)return;
+  const box=$('#p-dl'),msg=$('#p-dlMsg'),btns=[$('#p-dlData'),$('#p-dlCsv')];
+  box.hidden=false;
+  const say=t=>{msg.textContent=t};
+  const q=v=>{v=v==null?'':String(v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+  const csv=rows=>'﻿'+rows.map(r=>r.map(q).join(',')).join('\r\n');
+  const NAME='상세페이지지도2026_IT출판사';
+  function listCSV(){
+    const rows=[['출판사','도서명','부제','시리즈','저자','출간일','분야','첫 화면 유형','구성 요소','IT서 추가 구성 요소','톤','헤드카피','구획 수','길이(휴대폰 화면)','원본 폭(px)','원본 높이(px)','분석 메모','표지 스타일','알라딘 링크','원본 이미지 주소','이미지 파일','비고']];
+    [...I].sort(sorts.pub).forEach(x=>{const b=BK[x.books[0]];rows.push([x.pub,b.title,b.subtitle,b.series,b.author,b.date,b.cat,L.first[x.first],PK.filter(p=>x.parts.includes(p)&&!NEW.has(p)).map(p=>L.parts[p]).join(' / '),PK.filter(p=>x.parts.includes(p)&&NEW.has(p)).map(p=>L.parts[p]).join(' / '),L.tone[x.tone],x.copy,x.sections,x.screens,x.w,x.h,x.note,L.cstyle[b.style]||'','https://www.aladin.co.kr/shop/wproduct.aspx?ItemId='+b.id,x.src,'promo/'+x.file,x.via||''])});
+    return csv(rows);
+  }
+  function partsCSV(){
+    const rows=[['구분','코드','항목','IT서 추가','전체 장수','전체 비율(%)',...P.map(p=>p+' 비율(%)')]];
+    const add=(g,k,name,isNew,test)=>rows.push([g,k,name,isNew?'예':'',I.filter(test).length,pct('',test),...P.map(p=>pct(p,test))]);
+    PK.forEach(k=>add('구성 요소',k,L.parts[k],NEW.has(k),x=>x.parts.includes(k)));
+    Object.keys(L.first).forEach(k=>add('첫 화면 유형',k,L.first[k],false,x=>x.first===k));
+    Object.keys(L.tone).forEach(k=>add('톤',k,L.tone[k],false,x=>x.tone===k));
+    return csv(rows);
+  }
+  function missCSV(){return csv([['출판사','도서명','출간일','사유','알라딘 링크'],...D.missing.map(m=>[m.pub,m.title,m.date,m.reason,'https://www.aladin.co.kr/shop/wproduct.aspx?ItemId='+m.id])])}
+  async function save(name,data){
+    try{await dl.save({filename:name,data});say('')}
+    catch(e){const c=e&&e.code;
+      if(c==='declined')say('');
+      else if(c==='rate_limited')say('저장 창이 이미 열려 있습니다. 잠시 뒤 다시 눌러 주세요.');
+      else if(c==='too_large')say('파일이 커서 이 기기에서는 저장할 수 없습니다. 분석 데이터만 내려받아 주세요.');
+      else say('이 화면에서는 내려받을 수 없습니다.')}
+  }
+  let zipLib=null;
+  const loadZip=()=>zipLib||(zipLib=new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';s.onload=()=>ok(window.JSZip);s.onerror=()=>{zipLib=null;no(new Error('zip'))};document.head.appendChild(s)}));
+  const get=async(u,kind)=>{const r=await fetch(MEDIA(u));if(!r.ok)throw new Error(u);return kind==='t'?r.text():r.arrayBuffer()};
+  const busy=on=>btns.forEach(b=>b.disabled=on);
+  async function build(full){
+    busy(true);
+    try{
+      say('압축 도구를 불러오는 중…');
+      const JSZip=await loadZip(); const z=new JSZip(); const f=z.folder(NAME+(full?'':'_분석데이터'));
+      f.file('작업자료/홍보이미지_분류표.md',await get('files/promo-classification.md','t'));
+      f.file('작업자료/홍보이미지_수집기록.md',await get('files/promo-collection.md','t'));
+      f.file('작업자료/홍보이미지분석데이터.json',await get('files/promo-data.json','t'));
+      f.file('상세페이지목록.csv',listCSV());
+      f.file('구성요소집계.csv',partsCSV());
+      f.file('이미지없는도서.csv',missCSV());
+      if(full){
+        f.file('대시보드/index.html',await get('src/index.html','t'));
+        f.file('대시보드/data.js',await get('data.js','t'));
+        const sh=[];for(let i=1;i<=D.meta.thumbSheets;i++)sh.push(SHEET(i));for(let i=1;i<=D.meta.coverSheets;i++)sh.push(CSHEET(i));
+        const files=sh.concat(I.map(x=>IMG(x.file))); let done=0;
+        for(let i=0;i<files.length;i+=8){
+          await Promise.all(files.slice(i,i+8).map(async u=>{f.file('대시보드/'+u,await get(u));done++}));
+          say('이미지 모으는 중… '+done+'/'+files.length);
+        }
+      }
+      f.file('읽어보기.txt','상세페이지 지도 2026 (IT 출판사)\r\n\r\n1. 압축을 풉니다.\r\n'+(full?'2. 대시보드 폴더의 index.html을 두 번 눌러 브라우저로 엽니다. 인터넷 연결 없이도 열립니다.\r\n3. 대시보드/promo 폴더에 상세페이지 이미지(JPEG, 폭 640px)가 한 장씩 들어 있습니다.\r\n4. ':'2. ')+'상세페이지목록.csv, 구성요소집계.csv, 이미지없는도서.csv는 엑셀에서 열립니다.\r\n'+(full?'5. ':'3. ')+'작업자료 폴더에는 분류 기준, 수집 기록, 분석 데이터 원본이 있습니다.\r\n\r\n'+D.meta.source+'\r\n');
+      say('압축하는 중…');
+      const blob=await z.generateAsync({type:'blob',compression:'STORE',streamFiles:true});
+      say(''); await save(NAME+(full?'_전체파일.zip':'_분석자료.zip'),blob);
+    }catch(e){say('파일을 모으지 못했습니다. 잠시 뒤 다시 눌러 주세요.')}
+    finally{busy(false)}
+  }
+  $('#p-dlCsv').onclick=()=>save(NAME+'_목록.csv',listCSV());
+  $('#p-dlData').onclick=()=>build(false);
+})();
+
+};
+// ---------- 3. SNS 홍보 지도 ----------
+APP.init.sns=function(){const R=document.getElementById('sec-sns');document.getElementById('sns-loading').hidden=true;
+
+const D=window.SNS;
+const PUBS=['한빛미디어','이지스퍼블리싱','길벗','제이펍','골든래빗','위키북스'];
+const PL={ig:'인스타그램',x:'X',th:'스레드'};
+const PLS=['ig','x','th'];
+const FMTS=['사진 한 장','사진 여러 장','사진','릴스','영상','링크','글','확인 못 함'];
+const FCOL=['one','many','photo','reel','video','link','text','na'].map(k=>`var(--f-${k})`);
+const TYS=['신간 안내','예약판매·펀딩','이벤트·증정','서평단·체험단','강연·세미나·북토크','베스트셀러·성과','큐레이션·추천','내용 소개·팁','뉴스레터·소식','기타'];
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const day=s=>Date.UTC(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10))/864e5;
+const num=v=>(v??0).toLocaleString();
+let FULL=window.SNSTEXT||null, NOFULL=false;
+const fullOf=p=>FULL&&FULL[p.i]?FULL[p.i]:[p.t,''];
+
+document.getElementById('s-sub').textContent=`IT 표지 지도 ${D.books.length}종을 ${PUBS.length}개 출판사 공식 인스타그램·X·스레드 게시물 ${D.posts.length.toLocaleString()}건과 짝지었습니다 · 수집일 ${D.meta.collected}`;
+
+// 도서별로 게시물 묶기
+const B={}; D.books.forEach(b=>{B[b.id]=Object.assign(b,{posts:[],n:{ig:0,x:0,th:0},eng:0})});
+D.posts.forEach((p,i)=>{p.i=i;p.b.forEach(id=>{const b=B[id];if(!b)return;b.posts.push(p);b.n[p.p]++;if(p.r)b.eng+=p.r[1]+p.r[2];});});
+function index(){D.books.forEach(b=>{b.hay=(b.title+' '+b.author+' '+b.posts.map(p=>fullOf(p).join(' ')).join(' ')).toLowerCase();});}
+D.books.forEach(b=>{b.total=b.n.ig+b.n.x+b.n.th;b.posts.sort((a,c)=>a.d<c.d?-1:a.d>c.d?1:0);
+  if(b.total){const ds=b.posts.map(p=>p.d);b.first=ds[0];b.last=ds[ds.length-1];b.span=day(b.last)-day(b.first);}else{b.span=-1;}});
+index();
+const books=D.books;
+
+// 원문 전체는 첫 화면을 그린 뒤에 불러온다
+if(!FULL){FULL={};NOFULL=true;}
+if(false){const s=document.createElement('script');s.src='fulltext.js';s.onerror=()=>{FULL={};NOFULL=true;};s.onload=()=>{FULL=window.SNSTEXT||{};index();if(st.q)renderBooks();const g=document.getElementById('s-dlg');if(g.open&&g.dataset.id)openBook(g.dataset.id,g.dataset.f,true);};document.head.appendChild(s);}
+
+// 탭 (#books, #pubs, #timing)
+function show(v){
+  R.querySelectorAll('nav.tabs button').forEach(x=>x.setAttribute('aria-selected',x.dataset.v===v));
+  R.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='s-v-'+v);
+  if(v==='pubs')renderPubs(); if(v==='timing')renderTiming();
+}
+R.querySelectorAll('nav.tabs button').forEach(bt=>bt.onclick=()=>{show(bt.dataset.v);APP.setHash('sns',bt.dataset.v);});
+
+// 필터
+const st={pub:null,plat:null,band:null,cat:null,q:'',sort:'n',lim:60};
+const BANDS=[['0','찾지 못함',b=>b.total===0],['1-2','1~2건',b=>b.total>=1&&b.total<=2],['3-9','3~9건',b=>b.total>=3&&b.total<=9],['10+','10건 이상',b=>b.total>=10]];
+const cats=[...new Set(books.map(b=>b.cat).filter(Boolean))];
+function pass(b,skip){
+  if(skip!=='pub'&&st.pub&&b.pub!==st.pub)return false;
+  if(skip!=='plat'&&st.plat&&!b.n[st.plat])return false;
+  if(skip!=='band'&&st.band&&!BANDS.find(x=>x[0]===st.band)[2](b))return false;
+  if(skip!=='cat'&&st.cat&&b.cat!==st.cat)return false;
+  if(st.q&&!st.q.split(/\s+/).every(w=>b.hay.includes(w)))return false;
+  return true;
+}
+function renderFilters(){
+  const g=(title,key,items)=>`<div class="fgroup"><h3>${title}</h3><div class="opts">${items.map(([v,label,cnt,dot])=>`<button class="opt" data-k="${key}" data-v="${esc(v)}" aria-pressed="${st[key]===v}">${dot?`<i class="dot ${dot}"></i>`:''}${esc(label)}<span class="c">${cnt}</span></button>`).join('')}</div></div>`;
+  const cnt=(key,fn)=>books.filter(b=>pass(b,key)&&fn(b)).length;
+  document.getElementById('s-filters').innerHTML=
+    g('출판사','pub',PUBS.map(p=>[p,p,cnt('pub',b=>b.pub===p)]))+
+    g('플랫폼(게시물 있음)','plat',PLS.map(p=>[p,PL[p],cnt('plat',b=>b.n[p]>0),p]))+
+    g('홍보 게시물 수','band',BANDS.map(([v,l,f])=>[v,l,cnt('band',f)]))+
+    g('분야','cat',cats.map(c=>[c,c,cnt('cat',b=>b.cat===c)]).filter(x=>x[2]||st.cat===x[0]).sort((a,c)=>c[2]-a[2]));
+  document.querySelectorAll('#s-filters .opt').forEach(o=>o.onclick=()=>{const k=o.dataset.k,v=o.dataset.v;st[k]=st[k]===v?null:v;st.lim=60;renderBooks();});
+}
+const cover=id=>`covers/${id}.jpg`;
+function card(b){
+  const chips=b.total?PLS.filter(p=>b.n[p]).map(p=>`<span class="chip ${p}">${PL[p]} ${b.n[p]}</span>`).join(''):'<span class="chip none">공식 계정에서 찾지 못함</span>';
+  const strip=b.total?`<div class="strip">${PLS.map(p=>b.n[p]?`<i style="width:${b.n[p]/b.total*100}%;background:var(--${p})"></i>`:'').join('')}</div>`:'';
+  return `<button class="card" data-id="${b.id}">${CV(b.id,'w58')}<div><div class="t">${esc(b.title)}</div><div class="m">${esc(b.pub)} · ${b.date} · ${esc(b.author)}</div><div class="chips">${chips}</div>${strip}</div></button>`;
+}
+function renderBooks(){
+  renderFilters();
+  let L=books.filter(b=>pass(b));
+  const s=st.sort;
+  L.sort((a,c)=>s==='date'?(c.date>a.date?1:-1):s==='eng'?(c.eng-a.eng)||(c.total-a.total):s==='span'?c.span-a.span:(c.total-a.total)||(c.date>a.date?1:-1));
+  const ps=new Set();L.forEach(b=>b.posts.forEach(p=>ps.add(p.i)));
+  document.getElementById('s-count').textContent=`${L.length}종 · 게시물 ${ps.size.toLocaleString()}건`;
+  document.getElementById('s-grid').innerHTML=L.slice(0,st.lim).map(card).join('')||'<p class="empty">조건에 맞는 도서가 없습니다.</p>';
+  const m=document.getElementById('s-more');m.hidden=L.length<=st.lim;m.textContent=`더 보기 (${L.length-st.lim}종 남음)`;
+  document.querySelectorAll('#s-grid .card').forEach(c=>c.onclick=()=>openBook(c.dataset.id));
+}
+document.getElementById('s-more').onclick=()=>{st.lim+=60;renderBooks();};
+document.getElementById('s-q').oninput=e=>{st.q=e.target.value.trim().toLowerCase();st.lim=60;renderBooks();};
+document.getElementById('s-sort').onchange=e=>{st.sort=e.target.value;renderBooks();};
+document.getElementById('s-reset').onclick=()=>{Object.assign(st,{pub:null,plat:null,band:null,cat:null,q:'',lim:60});document.getElementById('s-q').value='';renderBooks();};
+
+// 상세
+const dlg=document.getElementById('s-dlg');
+const open=new Set();
+function rel(p,b){const k=day(p.d)-day(b.date);return k===0?'출간일':k<0?`출간 ${-k}일 전`:`출간 ${k}일 후`;}
+function fmtLabel(p){return p.f+(p.fn&&p.fn>1&&p.f==='사진'?` ${p.fn}장`:'');}
+function engLine(p){
+  const a=[];
+  if(p.p==='x'&&p.r)a.push(`답글 ${num(p.r[0])}`,`재게시 ${num(p.r[1])}`,`마음 ${num(p.r[2])}`,`북마크 ${num(p.r[3])}`,`조회 ${num(p.r[4])}`);
+  if(p.p==='ig'&&p.l!=null)a.push(`좋아요 ${num(p.l)}`);
+  if(p.p==='th'&&p.v!=null)a.push(`조회 ${num(p.v)}`);
+  return a.map(x=>`<span>${x}</span>`).join('');
+}
+function postLi(p,b){
+  const [ft,sc]=fullOf(p); const isOpen=open.has(p.i); const long=!!(FULL&&FULL[p.i]);
+  const txt=isOpen?ft:p.t+(p.n>280?'…':'');
+  return `<li><div class="when"><b>${p.d}</b>${b?rel(p,b):''}</div><div><div class="who"><span class="plabel ${p.p}">${PL[p.p]}</span>@${esc(p.o)}${p.o.toLowerCase()!==p.a.toLowerCase()?' · 협업 글':''}<span class="fmt">${esc(fmtLabel(p))}</span>${esc(p.ty)}${p.parts?` · 이어 쓴 글 ${p.parts}개`:''}</div>
+    <div class="txt">${esc(txt)}</div>${isOpen&&sc?`<div class="sc">${esc(sc)}</div>`:''}
+    <div class="eng">${engLine(p)}${long?`<button class="linkbtn" data-open="${p.i}">${isOpen?'접기':'전체 보기'}</button>`:''}<a href="${esc(p.u)}" target="_blank" rel="noopener">원문 보기</a>${p.partial?'<span>목록 화면의 앞부분만 읽음</span>':''}</div></div></li>`;
+}
+function openBook(id,plat,keep){
+  const b=B[id]; let f=plat||'all'; dlg.dataset.id=id; if(!keep)open.clear();
+  const draw=()=>{
+    dlg.dataset.f=f;
+    const ps=b.posts.filter(p=>f==='all'||p.p===f);
+    const xs=b.posts.filter(p=>p.p==='x'&&p.r);const lk=xs.reduce((t,p)=>t+p.r[2],0),rt=xs.reduce((t,p)=>t+p.r[1],0),vw=xs.reduce((t,p)=>t+p.r[4],0);
+    const sc=dlg.querySelector('.tl');const top=sc?sc.scrollTop:0;
+    dlg.innerHTML=`<div class="dhead">${CV(b.id,'w84',b.title)}<div><h2 id="dtitle">${esc(b.title)}</h2><div class="m">${esc(b.author)} · ${esc(b.pub)} · 출간 ${b.date}${b.cat?' · '+esc(b.cat):''}</div>
+      <div class="dsum"><div><b>${b.total}</b><span>홍보 게시물</span></div>${PLS.map(p=>`<div><b style="color:var(--${p})">${b.n[p]}</b><span>${PL[p]}</span></div>`).join('')}
+      ${xs.length?`<div><b>${num(lk)}</b><span>X 마음</span></div><div><b>${num(rt)}</b><span>X 재게시</span></div><div><b>${num(vw)}</b><span>X 조회</span></div>`:''}
+      ${b.total?`<div><b>${b.span}</b><span>첫 글~마지막 글(일)</span></div>`:''}</div>${APP.xl(b.id,'sns')}</div>
+      <button class="close" aria-label="닫기">×</button></div>
+      <div class="dfilter">${['all',...PLS].map(k=>`<button data-f="${k}" aria-pressed="${f===k}">${k==='all'?'전체':PL[k]} ${k==='all'?b.total:b.n[k]}</button>`).join('')}</div>
+      ${ps.length?`<ul class="tl">${ps.map(p=>postLi(p,b)).join('')}</ul>`
+        :`<p class="empty">${b.total?'이 플랫폼에는 게시물이 없습니다.':'수집한 공식 계정 게시물에서 이 책의 제목을 찾지 못했습니다. 다른 계정에서 홍보했거나, 수집 기간 밖이거나, 제목을 줄여 쓴 글일 수 있습니다.'}</p>`}`;
+    const nsc=dlg.querySelector('.tl'); if(nsc)nsc.scrollTop=top;
+    dlg.querySelector('.close').onclick=()=>dlg.close();
+    dlg.querySelectorAll('.dfilter button').forEach(x=>x.onclick=()=>{f=x.dataset.f;draw();});
+    dlg.querySelectorAll('[data-open]').forEach(x=>x.onclick=()=>{const i=+x.dataset.open;open.has(i)?open.delete(i):open.add(i);draw();});
+  };
+  draw(); if(!dlg.open)dlg.showModal();
+}
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+
+// 출판사 비교
+let pubsDone=false;
+function covBar(v,color){return `<div class="cov"><div class="track"><div class="fill" style="width:${v}%;background:${color}"></div></div><span class="v">${v}%</span></div>`;}
+const pct=(a,b)=>b?Math.round(a/b*100):0;
+function seqColors(n){const a=css('--accent');return Array.from({length:n},(_,i)=>`color-mix(in srgb, ${a} ${Math.round(16+i*(84/Math.max(n-1,1)))}%, var(--surface))`);}
+function renderPubs(){
+  if(pubsDone)return;pubsDone=true;
+  const el=document.getElementById('s-v-pubs');
+  const tot=D.posts.length, hit=D.posts.filter(p=>p.b.length).length, withAny=books.filter(b=>b.total).length;
+  const xs=D.posts.filter(p=>p.p==='x'&&p.r);
+  let h=`<h2>한눈에 보기</h2><p class="lede">수집 기간에 공식 계정이 올린 게시물 전체와, 그중 표지 지도 도서의 제목이 나온 게시물을 함께 셌습니다.</p>
+  <div class="tiles"><div class="tile"><b>${num(tot)}</b><span>수집한 게시물</span></div>
+  <div class="tile"><b>${num(hit)}</b><span>도서 제목이 나온 게시물</span></div>
+  <div class="tile"><b>${withAny}/${books.length}</b><span>게시물이 1건 이상인 도서</span></div>
+  ${PLS.map(p=>`<div class="tile"><b style="color:var(--${p})">${num(D.posts.filter(x=>x.p===p).length)}</b><span>${PL[p]} 게시물</span></div>`).join('')}
+  <div class="tile"><b>${xs.length?(xs.reduce((t,p)=>t+p.r[2],0)/xs.length).toFixed(1):'-'}</b><span>X 게시물당 평균 마음</span></div></div>`;
+  h+=`<h2>출판사별 커버율</h2><p class="lede">각 출판사 도서 중 해당 플랫폼에 한 번이라도 소개된 비율입니다. 골든래빗은 X 공식 계정이 없습니다.</p><div class="tblwrap"><table><thead><tr><th>출판사</th><th class="n">도서</th>${PLS.map(p=>`<th>${PL[p]}</th>`).join('')}<th>한 곳 이상</th><th class="n">도서당 게시물</th><th>가장 많이 다룬 책</th></tr></thead><tbody>`;
+  PUBS.forEach(pub=>{const L=books.filter(b=>b.pub===pub);const pc=p=>pct(L.filter(b=>b.n[p]).length,L.length);
+    const any=pct(L.filter(b=>b.total).length,L.length);const top=[...L].sort((a,c)=>c.total-a.total)[0];
+    h+=`<tr><td><b>${pub}</b></td><td class="n">${L.length}</td>${PLS.map(p=>`<td>${covBar(pc(p),`var(--${p})`)}</td>`).join('')}<td>${covBar(any,'var(--accent)')}</td><td class="n">${(L.reduce((t,b)=>t+b.total,0)/L.length).toFixed(1)}</td><td class="wrap"><button class="linkbtn" data-id="${top.id}">${esc(top.title)}</button> ${top.total}건</td></tr>`;});
+  h+=`</tbody></table></div>`;
+  h+=`<h2>수집한 공식 계정</h2><p class="lede">“전체”는 수집 기간에 그 계정이 올린 게시물 수, “도서 언급”은 그중 표지 지도 도서 제목이 나온 게시물 수입니다. 팔로워는 수집일에 프로필 화면에 보인 값입니다.</p><div class="tblwrap"><table><thead><tr><th>출판사</th><th>플랫폼</th><th>계정</th><th class="n">팔로워</th><th>수집 기간</th><th class="n">전체</th><th class="n">도서 언급</th><th>비율</th></tr></thead><tbody>`;
+  const acc=[...D.accounts].sort((a,c)=>PUBS.indexOf(a.pub)-PUBS.indexOf(c.pub)||PLS.indexOf(a.plat)-PLS.indexOf(c.plat));
+  acc.forEach(a=>{h+=`<tr><td>${a.pub}</td><td><span class="plabel ${a.plat}">${PL[a.plat]}</span></td><td>@${esc(a.acct)}${a.note?` <span style="color:var(--ink3)">· ${esc(a.note)}</span>`:''}</td><td class="n">${esc(a.followers||'-')}</td><td>${a.total?`${a.first} ~ ${a.last}`:`${a.start} 이후 게시물 없음`}</td><td class="n">${a.total}</td><td class="n">${a.match}</td><td>${a.total?covBar(pct(a.match,a.total),`var(--${a.plat})`):'-'}</td></tr>`;});
+  h+=`</tbody></table></div>`;
+  h+=`<h2>그 밖의 채널</h2><p class="lede">아래 채널은 목록만 적었습니다. 게시물은 인스타그램·X·스레드에서만 모았습니다.</p><div class="tblwrap"><table><thead><tr><th>출판사</th><th>유튜브·블로그·페이스북</th></tr></thead><tbody>${PUBS.map(p=>`<tr><td><b>${p}</b></td><td class="wrap">${esc(D.meta.other[p]||'')}</td></tr>`).join('')}</tbody></table></div>`;
+  // 형식 구성
+  const fcols=FCOL;
+  h+=`<h2>계정별 게시물 형식</h2><p class="lede">인스타그램은 사진 한 장·여러 장·릴스, X와 스레드는 사진·영상·링크·글로 나눴습니다.</p><div class="legend">${FMTS.map((f,i)=>`<span><i style="background:${fcols[i]}"></i>${f}</span>`).join('')}</div><div class="tblwrap"><table><thead><tr><th>출판사</th><th>계정</th><th>형식 구성</th><th class="n">게시물</th></tr></thead><tbody>`;
+  acc.filter(a=>a.total).forEach(a=>{const ps=D.posts.filter(p=>p.p===a.plat&&p.a===a.acct);const c=FMTS.map(f=>ps.filter(p=>p.f===f).length);
+    h+=`<tr><td>${a.pub}</td><td><span class="plabel ${a.plat}">${PL[a.plat]}</span> @${esc(a.acct)}</td><td><div class="stack">${c.map((v,i)=>v?`<i style="width:${v/ps.length*100}%;background:${fcols[i]}" title="${FMTS[i]} ${v}건 (${pct(v,ps.length)}%)"></i>`:'').join('')}</div></td><td class="n">${ps.length}</td></tr>`;});
+  h+=`</tbody></table></div>`;
+  // X 반응 상위
+  const top=[...xs].sort((a,c)=>(c.r[1]+c.r[2])-(a.r[1]+a.r[2])).slice(0,15);
+  h+=`<h2>X 반응 상위 15</h2><p class="lede">마음과 재게시를 더한 값이 큰 순서입니다. 수치는 수집일에 화면에 보인 값입니다.</p><ol class="toplist">${top.map((p,i)=>{const b=B[p.b[0]];return `<li><span class="rk">${i+1}</span><div><span class="ex">${esc(p.t)}</span><span class="bk">${esc(p.pub)} · ${b?`<button class="linkbtn" data-id="${b.id}">${esc(b.title)}</button>`:'도서 제목 없음'} · ${p.d} · ${esc(fmtLabel(p))}</span></div><a href="${esc(p.u)}" target="_blank" rel="noopener" class="eng">마음 ${num(p.r[2])} · 재게시 ${num(p.r[1])} · 조회 ${num(p.r[4])}</a></li>`}).join('')}</ol>`;
+  h+=noteHTML();
+  el.innerHTML=h;
+  el.querySelectorAll('.linkbtn[data-id]').forEach(x=>x.onclick=()=>openBook(x.dataset.id));
+}
+
+// 홍보 시점·방식
+let timingDone=false;
+const BK=[['출간 31일 이상 전',-1e9,-31],['30~8일 전',-30,-8],['7~1일 전',-7,-1],['출간 주(0~6일)',0,6],['7~30일 후',7,30],['31~90일 후',31,90],['91일 이후',91,1e9]];
+function heat(rows,cols,get,label){
+  const max=Math.max(.0001,...rows.flatMap(r=>cols.map(c=>get(r,c))));
+  return `<div class="tblwrap"><table class="heat"><thead><tr><th>${label}</th>${cols.map(c=>`<th style="text-align:center">${c}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr><td><b>${r.name}</b></td>${cols.map(c=>{const v=get(r,c);const k=Math.round(v/max*85);return `<td class="h" style="background:color-mix(in srgb, var(--accent) ${k}%, var(--surface));color:${k>50?'var(--on-accent)':'var(--ink)'}">${Math.round(v*100)}</td>`}).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+function renderTiming(){
+  if(timingDone)return;timingDone=true;
+  const el=document.getElementById('s-v-timing');
+  const cols=seqColors(BK.length);
+  const rows=PUBS.map(pub=>{const c=new Array(BK.length).fill(0);let n=0;
+    D.posts.forEach(p=>p.b.forEach(id=>{const b=B[id];if(!b||b.pub!==pub)return;const k=day(p.d)-day(b.date);const i=BK.findIndex(x=>k>=x[1]&&k<=x[2]);c[i]++;n++;}));return {pub,c,n};});
+  let h=`<h2>출간일 기준 언제 올렸나</h2><p class="lede">게시일과 책의 출간일 차이를 일 단위로 나눴습니다. 진한 칸일수록 출간 뒤에 올린 글입니다.</p>
+  <div class="legend">${BK.map((x,i)=>`<span><i style="background:${cols[i]}"></i>${x[0]}</span>`).join('')}</div>
+  <div class="tblwrap"><table><thead><tr><th>출판사</th><th>분포</th><th class="n">출간 전</th><th class="n">출간 후 30일 안</th><th class="n">31일 이후</th><th class="n">게시물</th></tr></thead><tbody>`;
+  rows.forEach(r=>{const pc=i=>r.n?r.c[i]/r.n*100:0;const pre=pct(r.c[0]+r.c[1]+r.c[2],r.n),mid=pct(r.c[3]+r.c[4],r.n);
+    h+=`<tr><td><b>${r.pub}</b></td><td><div class="stack" title="${r.n}건">${r.c.map((v,i)=>v?`<i style="width:${pc(i)}%;background:${cols[i]}" title="${BK[i][0]} ${v}건"></i>`:'').join('')}</div></td><td class="n">${r.n?pre+'%':'-'}</td><td class="n">${r.n?mid+'%':'-'}</td><td class="n">${r.n?(100-pre-mid)+'%':'-'}</td><td class="n">${r.n}</td></tr>`;});
+  h+=`</tbody></table></div>`;
+  // 형식: 플랫폼별
+  const fcols=FCOL;
+  h+=`<h2>플랫폼별 형식</h2><p class="lede">출판사마다 플랫폼에서 어떤 형식을 주로 쓰는지 보여 줍니다. 칸 위에 마우스를 올리면 건수가 나옵니다.</p><div class="legend">${FMTS.map((f,i)=>`<span><i style="background:${fcols[i]}"></i>${f}</span>`).join('')}</div><div class="tblwrap"><table><thead><tr><th>출판사</th>${PLS.map(p=>`<th>${PL[p]}</th>`).join('')}</tr></thead><tbody>`;
+  PUBS.forEach(pub=>{h+=`<tr><td><b>${pub}</b></td>${PLS.map(pl=>{const ps=D.posts.filter(p=>p.pub===pub&&p.p===pl);if(!ps.length)return '<td style="color:var(--ink3)">게시물 없음</td>';const c=FMTS.map(f=>ps.filter(p=>p.f===f).length);
+    return `<td><div class="stack" style="min-width:180px">${c.map((v,i)=>v?`<i style="width:${v/ps.length*100}%;background:${fcols[i]}" title="${FMTS[i]} ${v}건 (${pct(v,ps.length)}%)"></i>`:'').join('')}</div></td>`}).join('')}</tr>`;});
+  h+=`</tbody></table></div>`;
+  // 유형
+  const tm=PUBS.map(pub=>{const ps=D.posts.filter(p=>p.pub===pub);const c={};ps.forEach(p=>c[p.ty]=(c[p.ty]||0)+1);return {name:pub,c,n:ps.length};});
+  h+=`<h2>게시물 유형</h2><p class="lede">게시물 첫머리의 낱말로 나눈 추정치입니다. 칸 숫자는 그 출판사 게시물 중 비율(%)입니다. 도서 제목이 없는 게시물도 넣었습니다.</p>`+heat(tm,TYS,(r,t)=>r.n?(r.c[t]||0)/r.n:0,'출판사');
+  // 요일·시간대
+  const WD=['월','화','수','목','금','토','일'];const wd=s=>(new Date(Date.UTC(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10))).getUTCDay()+6)%7;
+  const wm=PUBS.map(pub=>{const ps=D.posts.filter(p=>p.pub===pub);const c={};ps.forEach(p=>{const k=WD[wd(p.d)];c[k]=(c[k]||0)+1;});return {name:pub,c,n:ps.length};});
+  h+=`<h2>올린 요일</h2><p class="lede">칸 숫자는 그 출판사 게시물 중 비율(%)입니다.</p>`+heat(wm,WD,(r,t)=>r.n?(r.c[t]||0)/r.n:0,'출판사');
+  const SL=[['오전 6~9시',6,9],['10~11시',10,11],['12~13시',12,13],['14~15시',14,15],['16~17시',16,17],['18~21시',18,21],['밤 22~5시',22,29]];
+  const hm=PUBS.map(pub=>{const ps=D.posts.filter(p=>p.pub===pub&&p.h!=='');const c={};ps.forEach(p=>{let hh=+p.h;if(hh<6)hh+=24;const s=SL.find(x=>hh>=x[1]&&hh<=x[2]);if(s)c[s[0]]=(c[s[0]]||0)+1;});return {name:pub,c,n:ps.length};});
+  h+=`<h2>올린 시간대</h2><p class="lede">한국 시간 기준입니다. 칸 숫자는 그 출판사 게시물 중 비율(%)입니다.</p>`+heat(hm,SL.map(x=>x[0]),(r,t)=>r.n?(r.c[t]||0)/r.n:0,'출판사');
+  // 홍보 기간 긴 책
+  const longB=[...books].filter(b=>b.total>=3).sort((a,c)=>c.span-a.span).slice(0,10);
+  h+=`<h2>가장 오래 홍보한 책 10</h2><p class="lede">첫 게시물부터 마지막 게시물까지의 기간입니다. 게시물 3건 이상인 책만 셉니다.</p><ol class="toplist">${longB.map((b,i)=>`<li><span class="rk">${i+1}</span><div><button class="linkbtn" data-id="${b.id}">${esc(b.title)}</button><span class="bk"> · ${b.pub} · ${b.first} ~ ${b.last}</span></div><span class="eng">${b.span}일 · ${b.total}건</span></li>`).join('')}</ol>`;
+  // 출간 전 예고가 빨랐던 책
+  const early=[...books].filter(b=>b.total&&day(b.first)<day(b.date)).sort((a,c)=>(day(a.first)-day(a.date))-(day(c.first)-day(c.date))).slice(0,10);
+  h+=`<h2>출간 전에 가장 일찍 알린 책 10</h2><p class="lede">첫 게시물이 출간일보다 며칠 앞섰는지 셌습니다.</p><ol class="toplist">${early.map((b,i)=>`<li><span class="rk">${i+1}</span><div><button class="linkbtn" data-id="${b.id}">${esc(b.title)}</button><span class="bk"> · ${b.pub} · 첫 글 ${b.first} · 출간 ${b.date}</span></div><span class="eng">${day(b.date)-day(b.first)}일 전</span></li>`).join('')}</ol>`;
+  h+=noteHTML();
+  el.innerHTML=h;
+  el.querySelectorAll('.linkbtn[data-id]').forEach(x=>x.onclick=()=>openBook(x.dataset.id));
+}
+function noteHTML(){const w=D.meta.window;return `<div class="note"><b>수집 범위와 한계</b><ul>
+<li>출판사 공식 계정만 봤습니다. 임프린트·교육 서비스 계정(길벗이지톡, 시나공, 한빛+ 등)과 저자·직원 개인 계정은 넣지 않았습니다. 길벗은 IT 계정과 본사 계정을 함께 봤습니다.</li>
+<li>수집 기간은 출판사별 가장 이른 출간일 2주 전부터 ${D.meta.collected}까지입니다. 시작일: ${PUBS.map(p=>`${p} ${w[p]}`).join(', ')}.</li>
+<li>크롬 로그인 화면에서 읽었습니다. 인스타그램 문구 일부는 프로필 목록 그림의 대체 글에서 읽었습니다. 게시일과 시각은 게시물 주소의 고유 번호에서 계산했습니다(한국 시간).</li>
+<li>게시물 본문에 책 제목이 나오면 그 책의 홍보로 셌습니다. 짧은 제목은 『』·《》 같은 괄호 안에 쓴 경우만 셌습니다. 제목을 줄여 쓰거나 그림 안에만 넣은 글은 빠질 수 있습니다. 출간 120일보다 더 앞선 글은 이전 판 이야기일 수 있어 뺐습니다.</li>
+<li>${(()=>{const pa=D.posts.filter(p=>p.partial);const n=k=>pa.filter(p=>p.p===k).length;return pa.length?`게시물 ${pa.length.toLocaleString()}건(인스타그램 ${n('ig')}건, X ${n('x')}건, 스레드 ${n('th')}건)은 원문 전체를 읽지 못해 목록 화면에 보인 앞부분만 있습니다. 이 글들도 날짜·형식·원문 링크는 들어 있습니다.`:'모든 게시물의 원문 전체를 읽었습니다.';})()}</li>
+<li>인스타그램 좋아요는 화면에 숫자가 보인 게시물만 적었습니다. X 반응과 스레드 조회 수는 수집일 기준입니다.</li>
+<li>같은 계정이 같은 시각에 이어 올린 글(X·스레드)은 첫 글 하나로 묶었습니다. 다른 계정 글을 재게시한 것은 셈에서 뺐습니다.</li>
+<li>위키북스는 2026-11-26에 수집했고, 다른 출판사와 맞춰 2026-11-12까지의 게시물만 넣었습니다. 위키북스의 X·스레드는 화면 내용을 스크립트로 읽었고, 스레드 조회 수는 없습니다.</li>
+<li>게시물 유형은 첫머리 낱말로 나눈 추정치입니다.</li>
+<li>게시물 문구는 앞부분만 보여 줍니다. 전체 내용과 이미지는 “원문 보기”로 확인하세요. 게시물의 저작권은 각 출판사에 있습니다.</li></ul></div>`;}
+
+renderBooks();
+APP.sec.sns={show:v=>show(v||'books'),open:id=>{if(B[id])openBook(id)},filter:sel=>{Object.assign(st,{pub:null,plat:null,band:null,cat:null,q:'',lim:60},sel);document.getElementById('s-q').value='';show('books');renderBooks();}};
+
+// 내려받기
+(async()=>{
+  const dl=await APP.downloads(); if(!dl)return;
+  const box=document.getElementById('s-dl'),msg=document.getElementById('s-dlMsg');
+  const bc=document.getElementById('s-dlCsv');
+  box.hidden=false;
+  const say=t=>{msg.textContent=t;};
+  const q=v=>{v=v==null?'':String(v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+  const csv=rows=>'﻿'+rows.map(r=>r.map(q).join(',')).join('\r\n');
+  const waitFull=()=>new Promise(ok=>{const t=()=>FULL?ok():setTimeout(t,200);t();});
+  function postsCSV(){
+    const rows=[['출판사','플랫폼','계정','게시일','게시 시(한국 시간)','형식','사진 장수','게시물 유형','짝지은 도서','X 답글','X 재게시','X 마음','X 북마크','X 조회','인스타그램 좋아요','스레드 조회','원문 링크',NOFULL?'게시물 문구(앞부분)':'원문 전체','이어 쓴 글·계정 댓글']];
+    D.posts.forEach(p=>{const [ft,sc]=fullOf(p);const r=p.r||[];rows.push([p.pub,PL[p.p],p.a,p.d,p.h,p.f,p.fn||'',p.ty,p.b.map(id=>B[id]?B[id].title:'').join(' / '),r[0]??'',r[1]??'',r[2]??'',r[3]??'',r[4]??'',p.l??'',p.v??'',p.u,ft,sc]);});
+    return csv(rows);
+  }
+  function booksCSV(){
+    const rows=[['출판사','도서명','저자','출간일','분야','게시물 합계','인스타그램','X','스레드','첫 게시일','마지막 게시일','X 마음+재게시']];
+    books.forEach(b=>rows.push([b.pub,b.title,b.author,b.date,b.cat,b.total,b.n.ig,b.n.x,b.n.th,b.first||'',b.last||'',b.eng]));
+    return csv(rows);
+  }
+  async function save(name,data){
+    try{await dl.save({filename:name,data});say('');}
+    catch(e){const c=e&&e.code;
+      if(c==='declined')say('');
+      else if(c==='rate_limited')say('저장 창이 이미 열려 있습니다. 잠시 뒤 다시 눌러 주세요.');
+      else say('이 화면에서는 내려받을 수 없습니다.');}
+  }
+  let zipLib=null;
+  const loadZip=()=>zipLib||(zipLib=new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';s.onload=()=>ok(window.JSZip);s.onerror=()=>{zipLib=null;no(new Error('zip'));};document.head.appendChild(s);}));
+  const get=async(u,kind)=>{const r=await fetch(MEDIA(u));if(!r.ok)throw new Error(u);return kind==='t'?r.text():r.arrayBuffer();};
+  const busy=v=>{bc.disabled=v;};
+  bc.onclick=async()=>{busy(true);try{await waitFull();say('');await save('SNS홍보지도2026_IT출판사_게시물목록.csv',postsCSV());}finally{busy(false);}};
+})();
+
+};
+
+// ---------- 4. 전략 보고서 ----------
+APP.init.report=function(){
+  const toc=document.getElementById('r-toc'), body=document.getElementById('r-body');
+  const draw=()=>{
+    const RP=window.REPORT, L=window.REPORTS||[];
+    toc.innerHTML='<b>목차</b>'+RP.toc.map(([id,t])=>'<a href="#report" data-to="'+esc(id)+'">'+esc(t)+'</a>').join('');
+    const pick='<label class="rpick">작성일 <select id="r-date">'+L.map((r,i)=>'<option value="'+esc(r.report_date)+'"'+(r.report_date===RP.asof?' selected':'')+'>'+esc(r.report_date)+(i===0?' (최신)':'')+'</option>').join('')+'</select></label>';
+    body.innerHTML='<h1 class="rh1">'+esc(RP.title)+'</h1><div class="rmeta">'+pick+'<span>보관 중인 보고서 '+L.length+'건</span>'+(RP.doc_url?'<a href="'+esc(RP.doc_url)+'" target="_blank" rel="noopener">원본 문서에서 편집·댓글 달기</a>':'')+'</div><p class="rlead">'+RP.lead+'</p>'+RP.body;
+  };
+  draw();
+  body.addEventListener('change',e=>{
+    if(e.target.id!=='r-date')return;
+    const sel=e.target; sel.disabled=true;
+    DB.loadReport(sel.value).then(()=>{draw();scrollTo(0,0)}).catch(()=>{sel.disabled=false});
+  });
+  toc.addEventListener('click',e=>{const a=e.target.closest('[data-to]');if(!a)return;e.preventDefault();APP.toReport(a.dataset.to)});
+  APP.sec.report={show:()=>{}};
+};
+APP.toReport=id=>APP.nav('report',null,true).then(()=>{const t=document.getElementById(id);if(t)t.scrollIntoView({block:'start'})});
+
+// ---------- 개요 ----------
+(function(){
+  const C=window.COVER, PR=window.PROMO, P=C.pubs, books=C.books;
+  const prof=Object.fromEntries(X.profiles.map(p=>[p.pub,p]));
+  const fmt=n=>n.toLocaleString();
+  const avgScr=(PR.imgs.reduce((a,x)=>a+x.screens,0)/PR.imgs.length).toFixed(1);
+  const covSample=[...books].sort((a,b)=>b.sp-a.sp).filter((b,i,a)=>a.findIndex(x=>x.pub===b.pub)===i).slice(0,4);
+  const hth=x=>{const k=x.ti%16;return '<i class="hth lz" data-bg="sheets/thumb_'+String(Math.floor(x.ti/16)+1).padStart(2,'0')+'.jpg" style="background-position:'+(k%4)/3*100+'% '+Math.floor(k/4)/3*100+'%"></i>'};
+  const proSample=[...PR.imgs].sort((a,b)=>CB[b.books[0]].date.localeCompare(CB[a.books[0]].date)).filter((x,i,a)=>a.findIndex(y=>y.pub===x.pub)===i).slice(0,3);
+  const pl=X.plat, plt=pl.ig+pl.x+pl.th, PLN={ig:'인스타그램',x:'X',th:'스레드'};
+  const withSns=books.filter(b=>snsN(b.id)>0).length;
+  let h='<div class="hero"><h1>IT 출판사 시장 지도 2026</h1><p>한빛미디어, 이지스퍼블리싱, 길벗, 제이펍, 골든래빗, 위키북스가 2026년에 낸 책 '+books.length+'종을 표지, 상세페이지, SNS 홍보 순서로 따라갑니다. 마지막 단계는 이 자료로 쓴 홍보 전략 보고서입니다.</p><div class="meta">수집일 '+esc(C.meta.collected)+' · '+esc(C.meta.range)+'</div></div>';
+  h+='<div class="flow">'+
+   '<button class="stage" data-nav="cover"><span class="eb">1단계</span><h3>표지 지도</h3><div class="vis">'+covSample.map(b=>CV(b.id,'',b.title)).join('')+'</div><div class="nums"><div><b>'+books.length+'종</b><span>표지</span></div><div><b>'+C.styles.length+'가지</b><span>표지 스타일</span></div></div><p>표지를 첫인상 스타일로 나누고 출판사마다 비교합니다.</p><span class="go">표지 지도 열기</span></button>'+
+   '<button class="stage" data-nav="promo"><span class="eb">2단계</span><h3>상세페이지 지도</h3><div class="vis">'+proSample.map(hth).join('')+'</div><div class="nums"><div><b>'+PR.imgs.length+'장</b><span>상세페이지</span></div><div><b>'+avgScr+'화면</b><span>평균 길이(휴대폰)</span></div></div><p>알라딘 출판사 제공 책소개 이미지를 첫 화면과 구성 요소로 나눕니다.</p><span class="go">상세페이지 지도 열기</span></button>'+
+   '<button class="stage" data-nav="sns"><span class="eb">3단계</span><h3>SNS 홍보 지도</h3><div class="vis plat"><div class="pbar">'+['ig','x','th'].map(k=>'<i style="width:'+pl[k]/plt*100+'%;background:var(--'+k+')"></i>').join('')+'</div><div class="plg">'+['ig','x','th'].map(k=>'<span><i style="background:var(--'+k+')"></i>'+PLN[k]+' '+fmt(pl[k])+'</span>').join('')+'</div></div><div class="nums"><div><b>'+fmt(X.posts)+'건</b><span>공식 계정 게시물</span></div><div><b>'+withSns+'종</b><span>소개된 도서</span></div></div><p>공식 계정 '+X.accounts+'곳의 게시물을 책과 짝지어 시점과 방식을 봅니다.</p><span class="go">SNS 홍보 지도 열기</span></button>'+
+   '<button class="stage" data-nav="report"><span class="eb">4단계</span><h3>홍보 전략 보고서</h3><div class="vis quote"><q>'+esc(X.findings[0]||'')+'</q></div><div class="nums"><div><b>'+X.findings.length+'가지</b><span>핵심 발견</span></div><div><b>'+X.profiles.length+'곳</b><span>출판사 전략 프로필</span></div></div><p>세 지도에서 읽은 출판사별 홍보 전략과 시사점입니다.</p><span class="go">보고서 열기</span></button>'+
+  '</div>';
+  h+='<h2>출판사 한눈에 보기</h2><p class="lede">출판사마다 네 지도의 핵심 값을 한 줄에 모았습니다. 칸을 누르면 해당 지도가 그 출판사 조건으로 열립니다.</p><div class="tblx"><table class="pt"><thead><tr><th>출판사</th><th>가장 많이 쓴 표지 스타일</th><th>상세페이지를 붙인 도서</th><th>SNS에 소개된 도서</th><th>홍보 전략 유형</th></tr></thead><tbody>';
+  P.forEach(p=>{
+    const L=books.filter(b=>b.pub===p), cnt={}; L.forEach(b=>cnt[b.style]=(cnt[b.style]||0)+1);
+    const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1])[0], cv=PR.coverage[p], sn=L.filter(b=>snsN(b.id)>0).length, pf=prof[p];
+    const bar=(a,t)=>'<span class="mbar"><span class="tr"><i style="width:'+a/t*100+'%"></i></span><span class="v">'+a+' / '+t+'종</span></span>';
+    h+='<tr><th scope="row"><button class="cellbtn" data-f="cover" data-p="'+esc(p)+'"><span class="lbl">'+esc(p)+'</span><small>'+L.length+'종</small></button></th>'+
+      '<td><button class="cellbtn" data-f="cover" data-p="'+esc(p)+'" data-s="'+top[0]+'"><span class="lbl">'+esc(CS[top[0]].ko)+'</span><small>'+top[1]+'종 · '+Math.round(top[1]/L.length*100)+'%</small></button></td>'+
+      '<td><button class="cellbtn" data-f="promo" data-p="'+esc(p)+'">'+bar(cv.with,cv.total)+'</button></td>'+
+      '<td><button class="cellbtn" data-f="sns" data-p="'+esc(p)+'">'+bar(sn,L.length)+'</button></td>'+
+      '<td>'+(pf?'<button class="cellbtn" data-r="'+esc(pf.id)+'"><span class="lbl"><span class="tag">'+esc(pf.type)+'</span></span><small>'+esc(pf.line)+'</small></button>':'')+'</td></tr>';
+  });
+  h+='</tbody></table></div>';
+  h+='<h2>책 한 권 따라가기</h2><p class="lede">제목이나 저자를 넣으면 그 책의 표지, 상세페이지, SNS 홍보로 바로 건너갈 수 있습니다.</p><div class="find"><input type="search" id="h-q" placeholder="제목·저자·시리즈로 찾기 (예: 클로드 코드, 된다!, 빠따)" aria-label="도서 찾기"><span id="h-n"></span></div><ul class="blist" id="h-list"></ul>';
+  h+='<h2>원본 대시보드</h2><p class="lede">이 앱은 아래 네 링크를 합친 것입니다. 원본 링크는 그대로 남아 있습니다.</p><div class="orig">'+
+    [['https://claude.ai/artifact/6RXtAAUpd2tTBkM1mAW427','표지 지도 2026 (IT 출판사)','표지 372종'],['https://claude.ai/artifact/WbEMkF9RjFzPTWmwKzCtfH','상세페이지 지도 2026 (IT 출판사)','상세페이지 364장'],['https://claude.ai/artifact/9ELAo7jPzkoFigXP8WGHxE','SNS 홍보 지도 2026 (IT 출판사)','게시물 3,512건'],[DOC_URL,'출판사별 SNS 홍보 전략 보고서 2026','편집할 수 있는 문서']].map(([u,t,s])=>'<a href="'+u+'" target="_blank" rel="noopener">'+esc(t)+'<small>'+esc(s)+'</small></a>').join('')+'</div>';
+  h+='<p class="homefoot">'+esc(C.meta.source)+'</p>';
+  h+='<p class="homefoot"><span id="h-who"></span> <button type="button" class="linkbtn" id="h-out">로그아웃</button></p>';
+  const root=document.getElementById('home'); root.innerHTML=h;
+  root.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{const k=b.dataset.f,p=b.dataset.p;APP.filter(k,k==='cover'?(b.dataset.s?{pub:p,style:b.dataset.s}:{pub:p}):{pub:p})});
+  root.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>APP.toReport(b.dataset.r));
+  books.forEach(b=>b._h=[b.title,b.subtitle,b.author,b.series,b.pub].join(' ').toLowerCase());
+  const row=b=>'<li>'+CV(b.id,'w44',b.title)+'<div><div class="t">'+esc(b.title)+'</div><div class="m">'+esc(b.pub)+' · '+esc(b.date)+' · '+esc(b.author)+'</div></div>'+APP.xl(b.id,'').replace('<span class="xlh">이 책을 다른 지도에서 보기</span>','').replace('class="xl"','class="xl" style="border:0;margin:0;padding:0"')+'</li>';
+  const draw=()=>{
+    const q=document.getElementById('h-q').value.trim().toLowerCase();
+    let L,lab;
+    if(q){const ws=q.split(/\s+/);L=books.filter(b=>ws.every(w=>b._h.includes(w))).sort((a,b)=>b.date.localeCompare(a.date));lab=L.length+'종 찾음'+(L.length>20?' · 앞의 20종':'')}
+    else{L=[...books].sort((a,b)=>snsN(b.id)-snsN(a.id));lab='SNS에서 가장 많이 소개한 책 8종'}
+    document.getElementById('h-n').textContent=lab;
+    document.getElementById('h-list').innerHTML=L.slice(0,q?20:8).map(row).join('')||'<li style="display:block;color:var(--ink2)">맞는 책이 없습니다. 낱말을 줄여 보세요.</li>';
+  };
+  document.getElementById('h-q').oninput=draw; draw();
+  APP.sec.home={show:()=>{}};APP.done.home=true;
+})();
+route();
+</script>
+
+</body>
+</html>
